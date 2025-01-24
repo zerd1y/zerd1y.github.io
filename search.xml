@@ -4,9 +4,98 @@
   
     
     <entry>
+      <title>Windows 常用快捷键</title>
+      <link href="/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <url>/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Windows-常用快捷键"><a href="#Windows-常用快捷键" class="headerlink" title="Windows 常用快捷键"></a>Windows 常用快捷键</h1><ol><li>Ctrl+C：复制</li><li>Ctrl+V：粘贴</li><li>Ctrl+A：全选</li><li>Ctrl+X：剪切</li><li>Ctrl+Z：撤销</li><li>Ctrl+S：保存</li><li>Alt+F4：关闭窗口</li><li>Shift+DELET：永久删除（正常删除在回收站）</li><li>Ctrl+Shift+Esc &#x2F; 任务栏右键：打开任务管理器（死机必用）</li><li>Windows+R：运行（程序 &#x2F; 命令行）</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基本Dos命令</title>
+      <link href="/2025/01/23/2025-1-23-%E5%9F%BA%E6%9C%ACDos%E5%91%BD%E4%BB%A4/"/>
+      <url>/2025/01/23/2025-1-23-%E5%9F%BA%E6%9C%ACDos%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本Dos命令"><a href="#基本Dos命令" class="headerlink" title="基本Dos命令"></a>基本Dos命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#盘符切换 e:</span></span><br><span class="line"><span class="comment">#查看当前目录所有文件 dir</span></span><br><span class="line"><span class="comment">#切换目录 cd (change directory)</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment">#切换上级目录</span></span><br><span class="line"><span class="comment">#推出终端 exit</span></span><br><span class="line"><span class="comment">#查看电脑ip ipconfig</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#打开应用</span></span><br><span class="line">      calc 计算器</span><br><span class="line">      mspaint 画图</span><br><span class="line">      notepad 记事本</span><br><span class="line"><span class="comment">#ping 命令</span></span><br><span class="line">      ping www.baidu.com</span><br><span class="line"><span class="comment">#文件操作</span></span><br><span class="line">      md 创建目录名 (make directory)</span><br><span class="line">      rd 删除目录名 (remove directory)</span><br><span class="line">      <span class="built_in">cd</span>&gt; 创建文件名</span><br><span class="line">      del 删除文件名 </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MarkDown学习</title>
+      <link href="/2025/01/23/2025-1-23-MarkDown%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2025/01/23/2025-1-23-MarkDown%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="MarkDown学习"><a href="#MarkDown学习" class="headerlink" title="MarkDown学习"></a>MarkDown学习</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><p>支持到6级</p><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p><strong>hello, world!</strong></p><p><em>hello, world!</em></p><p><em><strong>hello, world!</strong></em></p><p><del>hello, world!</del></p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote><p>后端——Java</p></blockquote><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr><hr><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><em>本地图片</em></p><p><img src="/../../img/LofiSu1.jpg" alt="loacal_image"></p><p><em>网络图片</em></p><p><img src="https://i.pinimg.com/736x/6a/fd/1d/6afd1d8ae3f3cc7dc9baba8be29826a9.jpg" alt="web_image"></p><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p><a href="%5Bzerd1y-blog%5D(https://www.zerd1y.com/)">点击跳转到我的博客</a></p><p><em>markdown无法直接跳转，但是写入网站可以跳转</em></p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ol><li>有序号的排序</li><li>B</li><li>C</li></ol><ul><li>“-“号空格</li><li>B</li><li>C</li></ul><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table><thead><tr><th>name</th><th>sex</th><th>birthday</th></tr></thead><tbody><tr><td>zerd1y</td><td>male</td><td>2006.8.16</td></tr></tbody></table><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>hello</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span></span><br></pre></td></tr></table></figure><h1 id="源码查看vscode-Markdown"><a href="#源码查看vscode-Markdown" class="headerlink" title="源码查看vscode&#x2F;Markdown"></a><em><strong>源码查看vscode&#x2F;Markdown</strong></em></h1>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2025-1-14 日志</title>
+      <link href="/2025/01/14/2025-1-14-2025-1-14/"/>
+      <url>/2025/01/14/2025-1-14-2025-1-14/</url>
+      
+        <content type="html"><![CDATA[<h1 id="2025-1-14-碎碎念"><a href="#2025-1-14-碎碎念" class="headerlink" title="2025-1-14 碎碎念"></a>2025-1-14 碎碎念</h1><p>感觉dp好难，不是很好理解<br>dp[i][j]:</p><ul><li>i -&gt; 第i个(种)</li><li>j -&gt; j空间</li><li>dp[i][j] -&gt; 前i种，不超过j空间的情况下，最大价值</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> chitchat </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日志 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>高斯滤波</title>
+      <link href="/2025/01/06/2025-1-6-%E9%AB%98%E6%96%AF%E6%BB%A4%E6%B3%A2/"/>
+      <url>/2025/01/06/2025-1-6-%E9%AB%98%E6%96%AF%E6%BB%A4%E6%B3%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="高斯滤波"><a href="#高斯滤波" class="headerlink" title="高斯滤波"></a>高斯滤波</h1><ul><li><p>用于图像处理中的预处理操作</p></li><li><p>将低像素进行锐化，使图像更清晰</p></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">import cv2 as cv</span><br><span class="line"></span><br><span class="line">INITIAL_KERNEL_SIZE = 1</span><br><span class="line">INITIAL_SIGMA_VALUE = 150</span><br><span class="line">MAX_SIGMA_VALUE = 300</span><br><span class="line">MAX_KERNEL_SIZE = 6</span><br><span class="line">WINDOW_NAME = &quot;Gaussian Blur Demo&quot;</span><br><span class="line">TRACKBAR_KERNEL_SIZE = &quot;Size&quot;</span><br><span class="line">TRACKBAR_SIGMA_VALUE = &quot;Sigma&quot;</span><br><span class="line"></span><br><span class="line">ksize = INITIAL_KERNEL_SIZE * 2 + 3</span><br><span class="line">sigma = INITIAL_SIGMA_VALUE / 10.0</span><br><span class="line"></span><br><span class="line">def update_kernel_size(kernel_size):</span><br><span class="line">    global ksize</span><br><span class="line">    ksize = kernel_size * 2 + 3</span><br><span class="line">    print(ksize, sigma)</span><br><span class="line">    apply_gaussian_blur()</span><br><span class="line"></span><br><span class="line">def update_sigma_value(sigma_value):</span><br><span class="line">    global sigma</span><br><span class="line">    sigma = sigma_value / 10.0</span><br><span class="line">    print(ksize, sigma)</span><br><span class="line">    apply_gaussian_blur()</span><br><span class="line"></span><br><span class="line">def apply_gaussian_blur():</span><br><span class="line">    dst = cv.GaussianBlur(src, (ksize, ksize), sigma)</span><br><span class="line">    cv.imshow(WINDOW_NAME, dst)</span><br><span class="line"></span><br><span class="line">src = cv.imread(&quot;LofiSu1.jpg&quot;, 0)</span><br><span class="line"></span><br><span class="line">cv.namedWindow(WINDOW_NAME)</span><br><span class="line"></span><br><span class="line">cv.createTrackbar(TRACKBAR_KERNEL_SIZE, WINDOW_NAME, INITIAL_KERNEL_SIZE, MAX_KERNEL_SIZE, update_kernel_size)</span><br><span class="line">cv.createTrackbar(TRACKBAR_SIGMA_VALUE, WINDOW_NAME, INITIAL_SIGMA_VALUE, MAX_SIGMA_VALUE, update_sigma_value)</span><br><span class="line"></span><br><span class="line">apply_gaussian_blur()</span><br><span class="line"></span><br><span class="line">if cv.waitKey(0) == 27:</span><br><span class="line">    cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机视觉 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>My First Blog</title>
-      <link href="/2025/01/04/2024-1-4-My-First-Blog/"/>
-      <url>/2025/01/04/2024-1-4-My-First-Blog/</url>
+      <link href="/2025/01/04/2025-1-4-My-First-Blog/"/>
+      <url>/2025/01/04/2025-1-4-My-First-Blog/</url>
       
         <content type="html"><![CDATA[<h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><p>今天是2025-1-4，大一上的期末周<br>每到期末周课就少起来了，对这一点我还感到挺开心的，就是考试和出成绩的时候会有些痛苦</p><p>至于为什么诞生了这篇博客：<br>1.自学后端开发的时候，b站大学的老师建议我搭建个人blog，来记录自己的计算机开发学习经历，感觉这还挺酷的<br>2.对于我们计算机学生而言，有三张脸：个人web（blog），GitHub，LinkedIn。<br>这三张脸是我们面对社会的最直接的脸面，无论是教授&#x2F;学者&#x2F;ceo&#x2F;cto，还是hr&#x2F;同事&#x2F;同学，他们都能通过这3张脸来认识你，了解你的兴趣，技术栈，个人能力，项目，paper等等。同时，我们展示这三张脸来向社会展示自己的能力，以争取工作&#x2F;研究学术&#x2F;创业的机会。<br>3.看到前辈的一些个人web，感觉好好看，单纯喜欢想自己做一个。</p><p>希望自己能坚持下来，不在于有多宏伟，多频繁的产出，但希望自己能在这里记录我学到的一些知识，一些看法，一些碎碎念，成为我这些年来的记忆。</p><p>文笔不好，事实上在现实生活中我本身就不是巧嘴滑舌的人<br>对我而言，仅仅只是作为一些记录<br>如果能对你有一点点的帮助，那再好不过了。</p><p>发现了一个需要注意的地方：<br>每次在vscode更新完文件配置需要在git上hexo三连：<br>hexo clean<br>hexo generate<br>hexo deploy<br>不然无法把自己更新的内容部署到vercel上</p>]]></content>
       
