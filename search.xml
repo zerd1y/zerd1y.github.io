@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Windows 常用快捷键</title>
-      <link href="/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-      <url>/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+      <title>Java-hello world</title>
+      <link href="/2025/01/24/2025-1-24-hello-world/"/>
+      <url>/2025/01/24/2025-1-24-hello-world/</url>
       
-        <content type="html"><![CDATA[<h1 id="Windows-常用快捷键"><a href="#Windows-常用快捷键" class="headerlink" title="Windows 常用快捷键"></a>Windows 常用快捷键</h1><ol><li>Ctrl+C：复制</li><li>Ctrl+V：粘贴</li><li>Ctrl+A：全选</li><li>Ctrl+X：剪切</li><li>Ctrl+Z：撤销</li><li>Ctrl+S：保存</li><li>Alt+F4：关闭窗口</li><li>Shift+DELET：永久删除（正常删除在回收站）</li><li>Ctrl+Shift+Esc &#x2F; 任务栏右键：打开任务管理器（死机必用）</li><li>Windows+R：运行（程序 &#x2F; 命令行）</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="Java-Hello-World！"><a href="#Java-Hello-World！" class="headerlink" title="Java Hello World！"></a><em>Java</em> Hello World！</h1><ol><li>随便建一个文件夹，放代码</li><li>新建一个java文件：<ul><li>文件后缀为<code>.java</code></li><li><code>hello.java</code></li><li>【坑】系统可能没有显示文件后缀名，我们需要动手打开</li></ul></li><li>写代码</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">hello</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>4.编译javac Java文件，会生成一个class文件</p><p>5.运行class文件</p><p><img src="C:\Users\14313\AppData\Roaming\Typora\typora-user-images\image-20250124210754434.png" alt="image-20250124210754434"></p><h2 id="可能遇到的bug"><a href="#可能遇到的bug" class="headerlink" title="可能遇到的bug"></a>可能遇到的bug</h2><ol><li>单词大小写不能错，<strong>Java对大小写敏感</strong></li><li>尽量用英文</li><li>文件名和类名必须一致，且首字母大写</li><li>符号不能用中文</li></ol>]]></content>
       
       
       
@@ -35,6 +35,19 @@
       <url>/2025/01/23/2025-1-23-MarkDown%E5%AD%A6%E4%B9%A0/</url>
       
         <content type="html"><![CDATA[<h1 id="MarkDown学习"><a href="#MarkDown学习" class="headerlink" title="MarkDown学习"></a>MarkDown学习</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><p>支持到6级</p><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p><strong>hello, world!</strong></p><p><em>hello, world!</em></p><p><em><strong>hello, world!</strong></em></p><p><del>hello, world!</del></p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote><p>后端——Java</p></blockquote><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr><hr><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><em>本地图片</em></p><p><img src="/../../img/LofiSu1.jpg" alt="loacal_image"></p><p><em>网络图片</em></p><p><img src="https://i.pinimg.com/736x/6a/fd/1d/6afd1d8ae3f3cc7dc9baba8be29826a9.jpg" alt="web_image"></p><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p><a href="%5Bzerd1y-blog%5D(https://www.zerd1y.com/)">点击跳转到我的博客</a></p><p><em>markdown无法直接跳转，但是写入网站可以跳转</em></p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ol><li>有序号的排序</li><li>B</li><li>C</li></ol><ul><li>“-“号空格</li><li>B</li><li>C</li></ul><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table><thead><tr><th>name</th><th>sex</th><th>birthday</th></tr></thead><tbody><tr><td>zerd1y</td><td>male</td><td>2006.8.16</td></tr></tbody></table><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>hello</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span></span><br></pre></td></tr></table></figure><h1 id="源码查看vscode-Markdown"><a href="#源码查看vscode-Markdown" class="headerlink" title="源码查看vscode&#x2F;Markdown"></a><em><strong>源码查看vscode&#x2F;Markdown</strong></em></h1>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows 常用快捷键</title>
+      <link href="/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <url>/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Windows-常用快捷键"><a href="#Windows-常用快捷键" class="headerlink" title="Windows 常用快捷键"></a>Windows 常用快捷键</h1><ol><li>Ctrl+C：复制</li><li>Ctrl+V：粘贴</li><li>Ctrl+A：全选</li><li>Ctrl+X：剪切</li><li>Ctrl+Z：撤销</li><li>Ctrl+S：保存</li><li>Alt+F4：关闭窗口</li><li>Shift+DELET：永久删除（正常删除在回收站）</li><li>Ctrl+Shift+Esc &#x2F; 任务栏右键：打开任务管理器（死机必用）</li><li>Windows+R：运行（程序 &#x2F; 命令行）</li></ol>]]></content>
       
       
       
@@ -97,7 +110,7 @@
       <link href="/2025/01/04/2025-1-4-My-First-Blog/"/>
       <url>/2025/01/04/2025-1-4-My-First-Blog/</url>
       
-        <content type="html"><![CDATA[<h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><p>今天是2025-1-4，大一上的期末周<br>每到期末周课就少起来了，对这一点我还感到挺开心的，就是考试和出成绩的时候会有些痛苦</p><p>至于为什么诞生了这篇博客：<br>1.自学后端开发的时候，b站大学的老师建议我搭建个人blog，来记录自己的计算机开发学习经历，感觉这还挺酷的<br>2.对于我们计算机学生而言，有三张脸：个人web（blog），GitHub，LinkedIn。<br>这三张脸是我们面对社会的最直接的脸面，无论是教授&#x2F;学者&#x2F;ceo&#x2F;cto，还是hr&#x2F;同事&#x2F;同学，他们都能通过这3张脸来认识你，了解你的兴趣，技术栈，个人能力，项目，paper等等。同时，我们展示这三张脸来向社会展示自己的能力，以争取工作&#x2F;研究学术&#x2F;创业的机会。<br>3.看到前辈的一些个人web，感觉好好看，单纯喜欢想自己做一个。</p><p>希望自己能坚持下来，不在于有多宏伟，多频繁的产出，但希望自己能在这里记录我学到的一些知识，一些看法，一些碎碎念，成为我这些年来的记忆。</p><p>文笔不好，事实上在现实生活中我本身就不是巧嘴滑舌的人<br>对我而言，仅仅只是作为一些记录<br>如果能对你有一点点的帮助，那再好不过了。</p><p>发现了一个需要注意的地方：<br>每次在vscode更新完文件配置需要在git上hexo三连：<br>hexo clean<br>hexo generate<br>hexo deploy<br>不然无法把自己更新的内容部署到vercel上</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><p>今天是2025-1-4，大一上的期末周<br>每到期末周课就少起来了，对这一点我还感到挺开心的，就是考试和出成绩的时候会有些痛苦</p><p>至于为什么诞生了这篇博客：<br>1.自学后端开发的时候，b站大学的老师建议我搭建个人blog，来记录自己的计算机开发学习经历，感觉这还挺酷的<br>2.对于我们计算机学生而言，有三张脸：个人web（blog），GitHub，LinkedIn。<br>这三张脸是我们面对社会的最直接的脸面，无论是教授&#x2F;学者&#x2F;ceo&#x2F;cto，还是hr&#x2F;同事&#x2F;同学，他们都能通过这3张脸来认识你，了解你的兴趣，技术栈，个人能力，项目，paper等等。同时，我们展示这三张脸来向社会展示自己的能力，以争取工作&#x2F;研究学术&#x2F;创业的机会。<br>3.看到前辈的一些个人web，感觉好好看，单纯喜欢想自己做一个。</p><p>希望自己能坚持下来，不在于有多宏伟，多频繁的产出，但希望自己能在这里记录我学到的一些知识，一些看法，一些碎碎念，成为我这些年来的记忆。</p><p>文笔不好，事实上在现实生活中我本身就不是巧嘴滑舌的人<br>对我而言，仅仅只是作为一些记录<br>如果能对你有一点点的帮助，那再好不过了。</p><p>发现了一个需要注意的地方：<br>每次在vscode更新完文件配置需要在git上hexo三连：<br>hexo clean<br>hexo generate<br>hexo deploy<br>不然无法把自己更新的内容部署到vercel上</p><p>本地部署：<br>hexo clean<br>hexo generate<br>hexo server<br>即可</p>]]></content>
       
       
       
