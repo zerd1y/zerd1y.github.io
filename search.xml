@@ -128,11 +128,11 @@
     
     
     <entry>
-      <title>Windows 常用快捷键</title>
-      <link href="/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-      <url>/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+      <title>基本Dos命令</title>
+      <link href="/2025/01/23/2025-1-23-%E5%9F%BA%E6%9C%ACDos%E5%91%BD%E4%BB%A4/"/>
+      <url>/2025/01/23/2025-1-23-%E5%9F%BA%E6%9C%ACDos%E5%91%BD%E4%BB%A4/</url>
       
-        <content type="html"><![CDATA[<h1 id="Windows-常用快捷键"><a href="#Windows-常用快捷键" class="headerlink" title="Windows 常用快捷键"></a>Windows 常用快捷键</h1><ol><li>Ctrl+C：复制</li><li>Ctrl+V：粘贴</li><li>Ctrl+A：全选</li><li>Ctrl+X：剪切</li><li>Ctrl+Z：撤销</li><li>Ctrl+S：保存</li><li>Alt+F4：关闭窗口</li><li>Shift+DELET：永久删除（正常删除在回收站）</li><li>Ctrl+Shift+Esc &#x2F; 任务栏右键：打开任务管理器（死机必用）</li><li>Windows+R：运行（程序 &#x2F; 命令行）</li></ol><h1 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h1><ol><li>Ctrl+D：复制当前行到下一行（IntelliJ IDEA）</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="基本Dos命令"><a href="#基本Dos命令" class="headerlink" title="基本Dos命令"></a>基本Dos命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#盘符切换 e:</span></span><br><span class="line"><span class="comment">#查看当前目录所有文件 dir</span></span><br><span class="line"><span class="comment">#切换目录 cd (change directory)</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment">#切换上级目录</span></span><br><span class="line"><span class="comment">#推出终端 exit</span></span><br><span class="line"><span class="comment">#查看电脑ip ipconfig</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#打开应用</span></span><br><span class="line">      calc 计算器</span><br><span class="line">      mspaint 画图</span><br><span class="line">      notepad 记事本</span><br><span class="line"><span class="comment">#ping 命令</span></span><br><span class="line">      ping www.baidu.com</span><br><span class="line"><span class="comment">#文件操作</span></span><br><span class="line">      md 创建目录名 (make directory)</span><br><span class="line">      rd 删除目录名 (remove directory)</span><br><span class="line">      <span class="built_in">cd</span>&gt; 创建文件名</span><br><span class="line">      del 删除文件名 </span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -147,11 +147,11 @@
     
     
     <entry>
-      <title>基本Dos命令</title>
-      <link href="/2025/01/23/2025-1-23-%E5%9F%BA%E6%9C%ACDos%E5%91%BD%E4%BB%A4/"/>
-      <url>/2025/01/23/2025-1-23-%E5%9F%BA%E6%9C%ACDos%E5%91%BD%E4%BB%A4/</url>
+      <title>Windows 常用快捷键</title>
+      <link href="/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <url>/2025/01/23/2025-1-23-Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
       
-        <content type="html"><![CDATA[<h1 id="基本Dos命令"><a href="#基本Dos命令" class="headerlink" title="基本Dos命令"></a>基本Dos命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#盘符切换 e:</span></span><br><span class="line"><span class="comment">#查看当前目录所有文件 dir</span></span><br><span class="line"><span class="comment">#切换目录 cd (change directory)</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment">#切换上级目录</span></span><br><span class="line"><span class="comment">#推出终端 exit</span></span><br><span class="line"><span class="comment">#查看电脑ip ipconfig</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#打开应用</span></span><br><span class="line">      calc 计算器</span><br><span class="line">      mspaint 画图</span><br><span class="line">      notepad 记事本</span><br><span class="line"><span class="comment">#ping 命令</span></span><br><span class="line">      ping www.baidu.com</span><br><span class="line"><span class="comment">#文件操作</span></span><br><span class="line">      md 创建目录名 (make directory)</span><br><span class="line">      rd 删除目录名 (remove directory)</span><br><span class="line">      <span class="built_in">cd</span>&gt; 创建文件名</span><br><span class="line">      del 删除文件名 </span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="Windows-常用快捷键"><a href="#Windows-常用快捷键" class="headerlink" title="Windows 常用快捷键"></a>Windows 常用快捷键</h1><ol><li>Ctrl+C：复制</li><li>Ctrl+V：粘贴</li><li>Ctrl+A：全选</li><li>Ctrl+X：剪切</li><li>Ctrl+Z：撤销</li><li>Ctrl+S：保存</li><li>Alt+F4：关闭窗口</li><li>Shift+DELET：永久删除（正常删除在回收站）</li><li>Ctrl+Shift+Esc &#x2F; 任务栏右键：打开任务管理器（死机必用）</li><li>Windows+R：运行（程序 &#x2F; 命令行）</li></ol><h1 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h1><ol><li>Ctrl+D：复制当前行到下一行（IntelliJ IDEA）</li></ol>]]></content>
       
       
       <categories>
