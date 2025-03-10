@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>概率（深度学习） | zerd1y-Blog</title><meta name="author" content="Jinghuai Xiao"><meta name="copyright" content="Jinghuai Xiao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="概率 （深度学习）简单地说，机器学习就是做出预测 概率是一种灵活的语言，用于说明我们的确定程度，并且它可以有效地应用于广泛的领域中 基本概率论掷骰子1234567891011121314%matplotlib inlineimport torchfrom torch.distributions import multinomialfrom d2l import torch as d2lfair_p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率（深度学习）">
+<meta property="og:url" content="https://zerd1y.com/2025/03/07/2025-3-7-%E6%A6%82%E7%8E%87%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/index.html">
+<meta property="og:site_name" content="zerd1y-Blog">
+<meta property="og:description" content="概率 （深度学习）简单地说，机器学习就是做出预测 概率是一种灵活的语言，用于说明我们的确定程度，并且它可以有效地应用于广泛的领域中 基本概率论掷骰子1234567891011121314%matplotlib inlineimport torchfrom torch.distributions import multinomialfrom d2l import torch as d2lfair_p">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zerd1y.com/img/cover/cover53.jpg">
+<meta property="article:published_time" content="2025-03-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-06T16:00:00.000Z">
+<meta property="article:author" content="Jinghuai Xiao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zerd1y.com/img/cover/cover53.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zerd1y.com/2025/03/07/2025-3-7-%E6%A6%82%E7%8E%87%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '概率（深度学习）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/modify.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://source.fomal.cc/img/default_cover_4.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 基础知识</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/basics/algorithm/"><i class="fa-fw fas fa-code"></i><span> 算法与数据结构</span></a></li><li><a class="site-page child" href="/basics/os/"><i class="fa-fw fas fa-desktop"></i><span> 操作系统</span></a></li><li><a class="site-page child" href="/basics/database/"><i class="fa-fw fas fa-database"></i><span> 数据库</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code-branch"></i><span> 开发</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/development/frontend/"><i class="fa-fw fab fa-react"></i><span> 前端</span></a></li><li><a class="site-page child" href="/development/backend/"><i class="fa-fw fas fa-server"></i><span> 后端</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-robot"></i><span> AI</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/ai/machine-learning/"><i class="fa-fw fas fa-brain"></i><span> 机器学习</span></a></li><li><a class="site-page child" href="/ai/computer-vision/"><i class="fa-fw fas fa-eye"></i><span> 计算机视觉</span></a></li><li><a class="site-page child" href="/ai/naturalS-language-processing/"><i class="fa-fw fas fa-comment-alt"></i><span> 自然语言处理</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chitchat/"><i class="fa-fw fas fa-bullhorn"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(../img/cover/cover53.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zerd1y-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">概率（深度学习）</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 基础知识</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/basics/algorithm/"><i class="fa-fw fas fa-code"></i><span> 算法与数据结构</span></a></li><li><a class="site-page child" href="/basics/os/"><i class="fa-fw fas fa-desktop"></i><span> 操作系统</span></a></li><li><a class="site-page child" href="/basics/database/"><i class="fa-fw fas fa-database"></i><span> 数据库</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code-branch"></i><span> 开发</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/development/frontend/"><i class="fa-fw fab fa-react"></i><span> 前端</span></a></li><li><a class="site-page child" href="/development/backend/"><i class="fa-fw fas fa-server"></i><span> 后端</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-robot"></i><span> AI</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/ai/machine-learning/"><i class="fa-fw fas fa-brain"></i><span> 机器学习</span></a></li><li><a class="site-page child" href="/ai/computer-vision/"><i class="fa-fw fas fa-eye"></i><span> 计算机视觉</span></a></li><li><a class="site-page child" href="/ai/naturalS-language-processing/"><i class="fa-fw fas fa-comment-alt"></i><span> 自然语言处理</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chitchat/"><i class="fa-fw fas fa-bullhorn"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">概率（深度学习）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-06T16:00:00.000Z" title="发表于 2025-03-07 00:00:00">2025-03-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-06T16:00:00.000Z" title="更新于 2025-03-07 00:00:00">2025-03-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/AI/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="概率-（深度学习）"><a href="#概率-（深度学习）" class="headerlink" title="概率 （深度学习）"></a>概率 （深度学习）</h1><p>简单地说，机器学习就是做出预测</p>
+<p>概率是一种灵活的语言，用于说明我们的确定程度，并且它可以有效地应用于广泛的领域中</p>
+<h2 id="基本概率论"><a href="#基本概率论" class="headerlink" title="基本概率论"></a>基本概率论</h2><h3 id="掷骰子"><a href="#掷骰子" class="headerlink" title="掷骰子"></a>掷骰子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.distributions <span class="keyword">import</span> multinomial</span><br><span class="line"><span class="keyword">from</span> d2l <span class="keyword">import</span> torch <span class="keyword">as</span> d2l</span><br><span class="line"></span><br><span class="line">fair_probs = torch.ones([<span class="number">6</span>]) / <span class="number">6</span></span><br><span class="line">multinomial.Multinomial(<span class="number">1</span>, fair_probs).sample() <span class="comment"># tensor([0., 0., 0., 1., 0., 0.])</span></span><br><span class="line"></span><br><span class="line">multinomial.Multinomial(<span class="number">10</span>, fair_probs).sample() <span class="comment"># tensor([1., 2., 2., 1., 1., 3.])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将结果存储为32位浮点数以进行除法</span></span><br><span class="line">counts = multinomial.Multinomial(<span class="number">1000</span>, fair_probs).sample()</span><br><span class="line">counts / <span class="number">1000</span>  <span class="comment"># 相对频率作为估计值</span></span><br><span class="line"><span class="comment"># tensor([0.1820, 0.1790, 0.1600, 0.1510, 0.1770, 0.1510])</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="创建公平骰子的概率分布"><a href="#创建公平骰子的概率分布" class="headerlink" title="创建公平骰子的概率分布"></a>创建公平骰子的概率分布</h4><ul>
+<li><p><code>torch.distributions.multinomial</code>：用于多项式分布采样（类似投掷骰子的实验）</p>
+</li>
+<li><p><code>fair_probs = torch.ones([6]) / 6</code>：</p>
+<ul>
+<li><code>torch.ones([6])</code> 生成一个全为 <code>1</code> 的长度为 <code>6</code> 的张量（对应于 6 个骰子面）</li>
+<li><code>/ 6</code> 让每个面出现的概率都是 <code>1/6</code>，表示 <strong>公平骰子</strong></li>
+</ul>
+</li>
+<li><pre><code class="language-python">torch.distributions.Multinomial(total_count, probs).sample(sample_shape=torch.Size([]))
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - `total_count`：整数，表示 **一次实验中进行的独立试验次数**（比如投掷几次骰子）</span><br><span class="line">  - `probs`：张量，表示 **每个类别（骰子面）的概率分布**（必须是非负数，且和为 1）</span><br><span class="line">  - `sample_shape`（可选）：生成多个样本的形状，通常不需要指定</span><br><span class="line"></span><br><span class="line">#### 投掷10次骰子</span><br><span class="line"></span><br><span class="line">- `Multinomial(10, fair_probs).sample()` **相当于投掷 10 次骰子**，统计每个面的出现次数</span><br><span class="line"></span><br><span class="line">### 绘图</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">counts = multinomial.Multinomial(10, fair_probs).sample((500,))</span><br><span class="line">cum_counts = counts.cumsum(dim=0)</span><br><span class="line">estimates = cum_counts / cum_counts.sum(dim=1, keepdims=True)</span><br><span class="line"></span><br><span class="line">d2l.set_figsize((6, 4.5))</span><br><span class="line">for i in range(6):</span><br><span class="line">    d2l.plt.plot(estimates[:, i].numpy(),</span><br><span class="line">                 label=(&quot;P(die=&quot; + str(i + 1) + &quot;)&quot;))</span><br><span class="line">d2l.plt.axhline(y=0.167, color=&#x27;black&#x27;, linestyle=&#x27;dashed&#x27;)</span><br><span class="line">d2l.plt.gca().set_xlabel(&#x27;Groups of experiments&#x27;)</span><br><span class="line">d2l.plt.gca().set_ylabel(&#x27;Estimated probability&#x27;)</span><br><span class="line">d2l.plt.legend();</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/screenshot/probability_test.png" alt="图像"></p>
+<h4 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h4><ul>
+<li><code>multinomial.Multinomial(10, fair_probs).sample((500,))</code>：<ul>
+<li><strong><code>10</code></strong>：每次实验投掷 10 次骰子</li>
+<li><strong><code>fair_probs</code></strong>：每个面出现的概率是 <code>1/6</code></li>
+<li><strong><code>sample((500,))</code></strong>：表示<strong>重复实验 500 组</strong>，结果 <code>counts</code> 是一个形状 <code>(500, 6)</code> 的张量，其中每一行表示 <strong>10 次投掷后各个面出现的次数</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="计算累积出现次数"><a href="#计算累积出现次数" class="headerlink" title="计算累积出现次数"></a>计算累积出现次数</h4><ul>
+<li><code>cum_counts = counts.cumsum(dim=0)</code>：<ul>
+<li><code>cumsum(dim=0)</code> <strong>按行累加</strong>，即 <strong>计算前 <code>n</code> 组实验的累计次数</strong></li>
+<li><code>cum_counts[i]</code> <strong>表示前 <code>i+1</code> 组实验中各个骰子面出现的总次数</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="计算每个面的估计概率"><a href="#计算每个面的估计概率" class="headerlink" title="计算每个面的估计概率"></a>计算每个面的估计概率</h4><ul>
+<li><code>estimates = cum_counts / cum_counts.sum(dim=1, keepdims=True)</code>：<ul>
+<li><code>cum_counts.sum(dim=1, keepdims=True)</code> 计算<strong>每组实验的总投掷次数</strong></li>
+<li><strong>每个面的累计出现次数</strong> ÷ <strong>总投掷次数</strong> &#x3D; <strong>估计概率</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h4><ul>
+<li><p><code>d2l.set_figsize((6, 4.5))</code>：<strong>设置绘图大小</strong>，<code>(6, 4.5)</code> 表示宽 <code>6</code>、高 <code>4.5</code></p>
+</li>
+<li><pre><code class="language-python">for i in range(6):
+    d2l.plt.plot(estimates[:, i].numpy(),
+                 label=(&quot;P(die=&quot; + str(i + 1) + &quot;)&quot;))
+</code></pre>
+</li>
+<li><p><code>estimates[:, i].numpy()</code>：<strong>取出第 <code>i</code> 列的所有行数据，并转换为 NumPy 数组</strong>，以便 Matplotlib 可以绘制图像</p>
+<ul>
+<li><code>estimates</code> 是一个 <strong>张量（Tensor）</strong>，它的形状是 <code>(500, 6)</code></li>
+<li>索引 <code>[:, i]</code>：<ol>
+<li><code>:</code> 代表 <strong>取所有行</strong>（即 500 组实验）</li>
+<li><code>i</code> 代表 <strong>取第 <code>i</code> 列</strong>（即骰子第 <code>i+1</code> 面的估计概率）</li>
+<li><strong>结果是一个 <code>(500,)</code> 形状的张量</strong>，表示 <strong>随着实验次数增加，骰子第 <code>i+1</code> 面的估计概率变化</strong></li>
+</ol>
+</li>
+<li><code>.numpy()</code>：<code>estimates[:, i]</code> 是一个 PyTorch <strong>张量（Tensor）</strong>，但 Matplotlib <strong>只能绘制 NumPy 数组</strong>，所以 <code>.numpy()</code> <strong>将其转换为 NumPy 数组</strong>，方便绘制</li>
+<li><code>label=(&quot;P(die=&quot; + str(i + 1) + &quot;)&quot;)</code>： 添加图例，例如 <code>P(die=1)</code>、<code>P(die=2)</code> 等</li>
+</ul>
+</li>
+</ul>
+<h4 id="添加参考线"><a href="#添加参考线" class="headerlink" title="添加参考线"></a>添加参考线</h4><ul>
+<li><code>d2l.plt.axhline(y=0.167, color=&#39;black&#39;, linestyle=&#39;dashed&#39;)</code>：画一条 <strong>y&#x3D;0.167</strong> 的 <strong>水平虚线</strong>（<code>1/6 ≈ 0.167</code>），表示<strong>理论概率</strong></li>
+</ul>
+<h4 id="设置坐标轴和图例"><a href="#设置坐标轴和图例" class="headerlink" title="设置坐标轴和图例"></a>设置坐标轴和图例</h4><ul>
+<li><code>set_xlabel(&#39;Groups of experiments&#39;)</code>：x 轴表示 <strong>实验次数</strong></li>
+<li><code>set_ylabel(&#39;Estimated probability&#39;)</code>：y 轴表示 <strong>每个面的估计概率</strong></li>
+<li><code>plt.legend()</code>：显示图例（不同面的概率曲线）</li>
+<li><code>d2l.plt.gca()</code> 是 <strong><code>matplotlib.pyplot.gca()</code></strong> 的调用方式，它的作用是 <strong>获取当前的坐标轴（Axes）对象</strong>，用于进一步调整图表的格式</li>
+<li><code>gca()</code> 代表 <strong>“Get Current Axes”（获取当前坐标轴）</strong>，它返回当前的 <code>Axes</code> 对象，允许我们对坐标轴进行更细致的调整，例如：<ul>
+<li>修改 <code>x</code> 轴和 <code>y</code> 轴的标签</li>
+<li>调整刻度</li>
+<li>设置标题</li>
+<li>修改坐标轴的外观</li>
+</ul>
+</li>
+</ul>
+<h2 id="概率论公理"><a href="#概率论公理" class="headerlink" title="概率论公理"></a>概率论公理</h2><p><em>概率</em>（probability）可以被认为是将集合映射到真实值的函数。在给定的样本空间$\mathcal{S}$中，事件$\mathcal{A}$的概率，表示为$P(\mathcal{A})$，满足以下属性：</p>
+<ul>
+<li>对于任意事件$\mathcal{A}$，其概率从不会是负数，即$P(\mathcal{A}) \geq 0$；</li>
+<li>整个样本空间的概率为$1$，即$P(\mathcal{S}) &#x3D; 1$；</li>
+<li>对于<em>互斥</em>（mutually exclusive）事件（对于所有$i \neq j$都有$\mathcal{A}_i \cap \mathcal{A}_j &#x3D; \emptyset$）的任意一个可数序列$\mathcal{A}_1, \mathcal{A}<em>2, \ldots$，序列中任意一个事件发生的概率等于它们各自发生的概率之和，即$P(\bigcup</em>{i&#x3D;1}^{\infty} \mathcal{A}<em>i) &#x3D; \sum</em>{i&#x3D;1}^{\infty} P(\mathcal{A}_i)$。</li>
+</ul>
+<h2 id="处理多个随机变量"><a href="#处理多个随机变量" class="headerlink" title="处理多个随机变量"></a>处理多个随机变量</h2><h3 id="联合概率"><a href="#联合概率" class="headerlink" title="联合概率"></a>联合概率</h3><p>第一个被称为<em>联合概率</em>（joint probability）$P(A&#x3D;a,B&#x3D;b)$：$A&#x3D;a$和$B&#x3D;b$同时满足的概率</p>
+<ul>
+<li>$P(A &#x3D; a, B&#x3D;b) \leq P(A&#x3D;a)$</li>
+</ul>
+<h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><ul>
+<li>$0 \leq \frac{P(A&#x3D;a, B&#x3D;b)}{P(A&#x3D;a)} \leq 1$：我们称这个比率为<em>条件概率</em>（conditional probability）</li>
+<li>$P(B&#x3D;b \mid A&#x3D;a)$</li>
+</ul>
+<h3 id="贝叶斯定理"><a href="#贝叶斯定理" class="headerlink" title="贝叶斯定理"></a>贝叶斯定理</h3><p>$$<br>P(A \mid B) &#x3D; \frac{P(B \mid A) P(A)}{P(B)}<br>$$</p>
+<p>这里我们使用紧凑的表示法：其中$P(A, B)$是一个<em>联合分布</em>（joint distribution），$P(A \mid B)$是一个<em>条件分布</em>（conditional distribution）。这种分布可以在给定值$A &#x3D; a, B&#x3D;b$上进行求值。</p>
+<h3 id="边际化"><a href="#边际化" class="headerlink" title="边际化"></a>边际化</h3><p>$$<br>P(B) &#x3D; \sum_{A} P(A, B)<br>$$</p>
+<p>$B$的概率相当于计算$A$的所有可能选择，并将所有选择的联合概率聚合在一起：这也称为<em>边际化</em>（marginalization）。边际化结果的概率或分布称为<em>边际概率</em>（marginal probability）或<em>边际分布</em>（marginal distribution）。</p>
+<h3 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h3><p>$$<br>P(A, B) &#x3D; P(A)P(B)<br>$$</p>
+<p>如果两个随机变量$A$和$B$是独立的，意味着事件$A$的发生跟$B$事件的发生无关。在这种情况下，统计学家通常将这一点表述为$A \perp  B$。</p>
+<p>同样地，给定另一个随机变量$C$时，两个随机变量$A$和$B$是<em>条件独立的</em>（conditionally independent），当且仅当$P(A, B \mid C) &#x3D; P(A \mid C)P(B \mid C)$。这个情况表示为$A \perp B \mid C$。</p>
+<h3 id="期望和方差"><a href="#期望和方差" class="headerlink" title="期望和方差"></a>期望和方差</h3><p>一个随机变量$X$的<em>期望</em>（expectation，或平均值（average））:<br>$$<br>E[X] &#x3D; \sum_{x} x P(X &#x3D; x)<br>$$<br>函数$f(x)$的输入是从分布$P$中抽取的随机变量：<br>$$<br>E_{x \sim P}[f(x)] &#x3D; \sum_x f(x) P(x)<br>$$<br>衡量随机变量$X$与其期望值的偏差，可通过方差来量化：<br>$$<br>\mathrm{Var}[X] &#x3D; E\left[(X - E[X])^2\right] &#x3D;<br>E[X^2] - E[X]^2<br>$$<br>随机变量函数的方差衡量的是：当从该随机变量分布中采样不同值$x$时，函数值偏离该函数的期望的程度：<br>$$<br>\mathrm{Var}[f(x)] &#x3D; E\left[\left(f(x) - E[f(x)]\right)^2\right]<br>$$<br><strong>方差的平方根被称为<em>标准差</em>（standard deviation）</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://zerd1y.com">Jinghuai Xiao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://zerd1y.com/2025/03/07/2025-3-7-%E6%A6%82%E7%8E%87%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/">https://zerd1y.com/2025/03/07/2025-3-7-%E6%A6%82%E7%8E%87%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://zerd1y.com" target="_blank">zerd1y-Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/../img/cover/cover53.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/03/08/2025-3-8-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="线性回归（深度学习）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover56.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">线性回归（深度学习）</div></div><div class="info-2"><div class="info-item-1">线性回归（深度学习）回归（regression）是能为一个或多个自变量与因变量之间关系建模的一类方法 线性回归（linear regression） 线性回归的基本元素 线性模型 损失函数 解析解 随机梯度下降 用模型进行预测  例子根据房屋的面积（平方英尺）和房龄（年）来估算房屋价格（美元）。  训练数据集（training data set） 或训练集（training set）：房屋的销售价格、面积和房龄 样本（sample）&#x2F;数据点（data point）或数据样本（data instance）：每行数据 标签（label）或目标（target）：试图预测的目标（比如预测房屋价格） 特征（feature）或协变量（covariate）：预测所依据的自变量（面积和房龄）  线性模型$$\mathrm{price} &#x3D; w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} +...</div></div></div></a><a class="pagination-related" href="/2025/03/07/2025-3-7-%E6%9F%A5%E9%98%85%E6%96%87%E6%A1%A3%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="查阅文档（深度学习）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover54.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">查阅文档（深度学习）</div></div><div class="info-2"><div class="info-item-1">查阅文档（深度学习）查找模块中的所有函数和类12345import torchprint(dir(torch.distributions))# [&#x27;AbsTransform&#x27;, &#x27;AffineTransform&#x27;, &#x27;Bernoulli&#x27;, &#x27;Beta&#x27;, &#x27;Binomial&#x27;, &#x27;CatTransform&#x27;, &#x27;Categorical&#x27;, &#x27;Cauchy&#x27;, &#x27;Chi2&#x27;, &#x27;ComposeTransform&#x27;, &#x27;ContinuousBernoulli&#x27;, &#x27;CorrCholeskyTransform&#x27;, &#x27;CumulativeDistributionTransform&#x27;, &#x27;Dirichlet&#x27;, &#x27;Distribution&#x27;,...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jinghuai Xiao</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zerd1y"><i></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/zerd1y" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xiaojinghuai33@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E7%8E%87-%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">概率 （深度学习）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E7%8E%87%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text">基本概率论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%B7%E9%AA%B0%E5%AD%90"><span class="toc-number">1.1.1.</span> <span class="toc-text">掷骰子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%AC%E5%B9%B3%E9%AA%B0%E5%AD%90%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">创建公平骰子的概率分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">生成数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%B4%AF%E7%A7%AF%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">计算累积出现次数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%AF%8F%E4%B8%AA%E9%9D%A2%E7%9A%84%E4%BC%B0%E8%AE%A1%E6%A6%82%E7%8E%87"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">计算每个面的估计概率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">画图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%8F%82%E8%80%83%E7%BA%BF"><span class="toc-number">1.1.1.6.</span> <span class="toc-text">添加参考线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%9D%90%E6%A0%87%E8%BD%B4%E5%92%8C%E5%9B%BE%E4%BE%8B"><span class="toc-number">1.1.1.7.</span> <span class="toc-text">设置坐标轴和图例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E5%85%AC%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">概率论公理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%A4%9A%E4%B8%AA%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">处理多个随机变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87"><span class="toc-number">1.3.1.</span> <span class="toc-text">联合概率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="toc-number">1.3.2.</span> <span class="toc-text">条件概率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-number">1.3.3.</span> <span class="toc-text">贝叶斯定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E9%99%85%E5%8C%96"><span class="toc-number">1.3.4.</span> <span class="toc-text">边际化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-number">1.3.5.</span> <span class="toc-text">独立性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE"><span class="toc-number">1.3.6.</span> <span class="toc-text">期望和方差</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/09/2025-3-9-jQuery/" title="jQuery"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover57.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jQuery"/></a><div class="content"><a class="title" href="/2025/03/09/2025-3-9-jQuery/" title="jQuery">jQuery</a><time datetime="2025-03-08T16:00:00.000Z" title="发表于 2025-03-09 00:00:00">2025-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/08/2025-3-8-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="线性回归（深度学习）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover56.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性回归（深度学习）"/></a><div class="content"><a class="title" href="/2025/03/08/2025-3-8-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="线性回归（深度学习）">线性回归（深度学习）</a><time datetime="2025-03-07T16:00:00.000Z" title="发表于 2025-03-08 00:00:00">2025-03-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/07/2025-3-7-%E6%A6%82%E7%8E%87%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="概率（深度学习）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover53.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率（深度学习）"/></a><div class="content"><a class="title" href="/2025/03/07/2025-3-7-%E6%A6%82%E7%8E%87%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="概率（深度学习）">概率（深度学习）</a><time datetime="2025-03-06T16:00:00.000Z" title="发表于 2025-03-07 00:00:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/07/2025-3-7-%E6%9F%A5%E9%98%85%E6%96%87%E6%A1%A3%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="查阅文档（深度学习）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover54.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="查阅文档（深度学习）"/></a><div class="content"><a class="title" href="/2025/03/07/2025-3-7-%E6%9F%A5%E9%98%85%E6%96%87%E6%A1%A3%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="查阅文档（深度学习）">查阅文档（深度学习）</a><time datetime="2025-03-06T16:00:00.000Z" title="发表于 2025-03-07 00:00:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/07/2025-3-7-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88JavaScript%EF%BC%89/" title="面向对象（JavaScript）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover55.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向对象（JavaScript）"/></a><div class="content"><a class="title" href="/2025/03/07/2025-3-7-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88JavaScript%EF%BC%89/" title="面向对象（JavaScript）">面向对象（JavaScript）</a><time datetime="2025-03-06T16:00:00.000Z" title="发表于 2025-03-07 00:00:00">2025-03-07</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By Jinghuai Xiao</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

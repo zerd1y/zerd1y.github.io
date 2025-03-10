@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据类型（JavaScript） | zerd1y-Blog</title><meta name="author" content="Jinghuai Xiao"><meta name="copyright" content="Jinghuai Xiao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="数据类型（JavaScript）字符串 可用&#39;&#39; 或者 &quot;&quot; 12var name &#x3D; &quot;Xiao Jinghuai&quot;;var name &#x3D; &#x27;zerd1y&#x27;;  访问 用索引访问： str[index]   转义字符 转义字符：\  12345\&#x27;         &#x27;\&quot;         &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型（JavaScript）">
+<meta property="og:url" content="https://zerd1y.com/2025/03/03/2025-3-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88JavaScript%EF%BC%89/index.html">
+<meta property="og:site_name" content="zerd1y-Blog">
+<meta property="og:description" content="数据类型（JavaScript）字符串 可用&#39;&#39; 或者 &quot;&quot; 12var name &#x3D; &quot;Xiao Jinghuai&quot;;var name &#x3D; &#x27;zerd1y&#x27;;  访问 用索引访问： str[index]   转义字符 转义字符：\  12345\&#x27;         &#x27;\&quot;         &amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zerd1y.com/img/cover/cover47.jpg">
+<meta property="article:published_time" content="2025-03-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-02T16:00:00.000Z">
+<meta property="article:author" content="Jinghuai Xiao">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zerd1y.com/img/cover/cover47.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zerd1y.com/2025/03/03/2025-3-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88JavaScript%EF%BC%89/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据类型（JavaScript）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/modify.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://source.fomal.cc/img/default_cover_4.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 基础知识</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/basics/algorithm/"><i class="fa-fw fas fa-code"></i><span> 算法与数据结构</span></a></li><li><a class="site-page child" href="/basics/os/"><i class="fa-fw fas fa-desktop"></i><span> 操作系统</span></a></li><li><a class="site-page child" href="/basics/database/"><i class="fa-fw fas fa-database"></i><span> 数据库</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code-branch"></i><span> 开发</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/development/frontend/"><i class="fa-fw fab fa-react"></i><span> 前端</span></a></li><li><a class="site-page child" href="/development/backend/"><i class="fa-fw fas fa-server"></i><span> 后端</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-robot"></i><span> AI</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/ai/machine-learning/"><i class="fa-fw fas fa-brain"></i><span> 机器学习</span></a></li><li><a class="site-page child" href="/ai/computer-vision/"><i class="fa-fw fas fa-eye"></i><span> 计算机视觉</span></a></li><li><a class="site-page child" href="/ai/naturalS-language-processing/"><i class="fa-fw fas fa-comment-alt"></i><span> 自然语言处理</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chitchat/"><i class="fa-fw fas fa-bullhorn"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(../img/cover/cover47.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zerd1y-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">数据类型（JavaScript）</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 基础知识</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/basics/algorithm/"><i class="fa-fw fas fa-code"></i><span> 算法与数据结构</span></a></li><li><a class="site-page child" href="/basics/os/"><i class="fa-fw fas fa-desktop"></i><span> 操作系统</span></a></li><li><a class="site-page child" href="/basics/database/"><i class="fa-fw fas fa-database"></i><span> 数据库</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code-branch"></i><span> 开发</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/development/frontend/"><i class="fa-fw fab fa-react"></i><span> 前端</span></a></li><li><a class="site-page child" href="/development/backend/"><i class="fa-fw fas fa-server"></i><span> 后端</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-robot"></i><span> AI</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/ai/machine-learning/"><i class="fa-fw fas fa-brain"></i><span> 机器学习</span></a></li><li><a class="site-page child" href="/ai/computer-vision/"><i class="fa-fw fas fa-eye"></i><span> 计算机视觉</span></a></li><li><a class="site-page child" href="/ai/naturalS-language-processing/"><i class="fa-fw fas fa-comment-alt"></i><span> 自然语言处理</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chitchat/"><i class="fa-fw fas fa-bullhorn"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">数据类型（JavaScript）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-02T16:00:00.000Z" title="发表于 2025-03-03 00:00:00">2025-03-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-02T16:00:00.000Z" title="更新于 2025-03-03 00:00:00">2025-03-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BC%80%E5%8F%91/">开发</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BC%80%E5%8F%91/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="数据类型（JavaScript）"><a href="#数据类型（JavaScript）" class="headerlink" title="数据类型（JavaScript）"></a>数据类型（JavaScript）</h1><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li><p>可用<code>&#39;&#39;</code> 或者 <code>&quot;&quot;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;Xiao Jinghuai&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;zerd1y&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><ul>
+<li><p>用索引访问：</p>
+<p><code>str[index]</code></p>
+</li>
+</ul>
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><ul>
+<li>转义字符：<code>\</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\<span class="string">&#x27;         &#x27;</span></span><br><span class="line">\<span class="string">&quot;         &quot;</span></span><br><span class="line">\\         \</span><br><span class="line">\n         换行</span><br><span class="line">\t         回车</span><br></pre></td></tr></table></figure>
+
+<h3 id="多行字符串编写"><a href="#多行字符串编写" class="headerlink" title="多行字符串编写"></a>多行字符串编写</h3><ul>
+<li><p>符号：<code>ESC</code>和<code>TAB</code>键中间</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> msg = <span class="string">`</span></span><br><span class="line"><span class="string">        hello</span></span><br><span class="line"><span class="string">        Xiao </span></span><br><span class="line"><span class="string">        Jinghuai`</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><ul>
+<li><code>$&#123;content&#125;</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&quot;Xiao Jinghuai&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> sayHello = <span class="string">`hello, <span class="subst">$&#123;name&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li><p>字符串长度：<code>str.length</code></p>
+</li>
+<li><p><strong>字符串定义后无法改变</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/screenshot/js_name.png" alt="js_name"></p>
+</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><p>大小写转换</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name.<span class="title function_">toUpperCase</span>()</span><br><span class="line">name.<span class="title function_">toLowerCase</span>()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检索指定字符第一次出现的位置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name.<span class="title function_">indexOf</span>()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提取字符串中两个指定的索引号之间的字符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">substring</span>() <span class="comment">//左闭右开</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>**数组可以包含任意的数据类型：**包括字符串，数字，对象，函数，甚至其他数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="string">&quot;csdiy&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问-1"><a href="#访问-1" class="headerlink" title="访问"></a>访问</h3><ul>
+<li><p>用索引访问：</p>
+<p><code>arr[index]</code></p>
+</li>
+</ul>
+<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><ul>
+<li><p>长度：<code>arr.length</code></p>
+<p>注意：给arr.length赋值，数组大小会发生变化。多的为undefined，少的会直接删除元素。方法</p>
+</li>
+</ul>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li><p>查询某个元素在数组中第一次出现的位置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">indexOf</span>()</span><br><span class="line"><span class="comment">// 字符串&quot;1&quot;和数字1不一样</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切片</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">slice</span>()</span><br><span class="line"><span class="comment">//左闭右开</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>push()</code>、<code>pop()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">push</span>() <span class="comment">//添加到尾部</span></span><br><span class="line"><span class="title function_">pop</span>()  <span class="comment">//删除尾部最后一个元素</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>unshift()</code>：在头部添加元素</p>
+</li>
+<li><p><code>shift</code>：删除数组头部第一个元素</p>
+</li>
+<li><p><code>sort()</code>：排序（字符串Unicode顺序）</p>
+</li>
+<li><p><code>reverse()</code>：反转数组元素</p>
+</li>
+<li><p><code>concat()</code>：合并现有数组，返回一个新数组（不修改原数组）</p>
+</li>
+<li><p><code>join()</code>：用特定字符，将数组拼接形成字符串（默认<code>,</code>）</p>
+</li>
+</ul>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><ul>
+<li><p>JavaScript 中的所有事物都是对象：字符串、数值、数组、函数…</p>
+</li>
+<li><p>此外，JavaScript 允许自定义对象</p>
+</li>
+<li><p>JavaScript中<strong>所有的键都是字符串，值是任意对象</strong></p>
+</li>
+</ul>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 对象名 = &#123;</span><br><span class="line">    属性名: 对象值,</span><br><span class="line">    属性名: 对象值,</span><br><span class="line">    属性名: 对象值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>创建一个person对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">            <span class="attr">name</span>: <span class="string">&quot;Xiao Jinghuai&quot;</span>,</span><br><span class="line">            <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">            <span class="attr">email</span>: <span class="string">&quot;xiaojinghuai33@gmail&quot;</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>&#123;...&#125;</code>表示一个对象：键值对描述属性<code>xxx: xxx</code>，多个属性间用<code>,</code>隔开，最后一个属性不加<code>,</code></p>
+</li>
+</ul>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<li><p>访问：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象.属性</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象赋值：</p>
+<p>在浏览器控制台可以直接改变对象属性的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person.<span class="property">name</span> = <span class="string">&quot;zerd1y&quot;</span></span><br><span class="line">&gt; <span class="string">&#x27;zerd1y&#x27;</span></span><br><span class="line">person.<span class="property">name</span></span><br><span class="line">&gt; <span class="string">&#x27;zerd1y&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用一个不存在的对象属性，不会报错</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person.<span class="property">score</span></span><br><span class="line">&gt; <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态的删减属性</p>
+<p>通过<code>delete</code>删除对象属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> person.<span class="property">age</span></span><br><span class="line"><span class="literal">true</span></span><br><span class="line">person</span><br><span class="line">&gt; &#123;<span class="attr">name</span>: <span class="string">&#x27;zerd1y&#x27;</span>, <span class="attr">email</span>: <span class="string">&#x27;xiaojinghuai33@gmail&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态的添加</p>
+<p>直接给新的属性添加值即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person.<span class="property">score</span> = <span class="number">100</span></span><br><span class="line">&gt; <span class="number">100</span></span><br><span class="line">person</span><br><span class="line">&gt; &#123;<span class="attr">name</span>: <span class="string">&#x27;zerd1y&#x27;</span>, <span class="attr">email</span>: <span class="string">&#x27;xiaojinghuai33@gmail&#x27;</span>, <span class="attr">score</span>: <span class="number">100</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断属性是否在这个对象中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;name&#x27;</span> <span class="keyword">in</span> person</span><br><span class="line">&gt; <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">name <span class="keyword">in</span> person</span><br><span class="line">&gt; <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//继承</span></span><br><span class="line"><span class="string">&#x27;toString&#x27;</span> <span class="keyword">in</span> person</span><br><span class="line">&gt; <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断一个属性是否是这个对象<strong>自身</strong>拥有的（不是继承的）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person.<span class="title function_">hasOwnProperty</span>(<span class="string">&#x27;toString&#x27;</span>)</span><br><span class="line">&gt; <span class="literal">false</span></span><br><span class="line">person.<span class="title function_">hasOwnProperty</span>(<span class="string">&#x27;name&#x27;</span>)</span><br><span class="line">&gt; <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><ul>
+<li>类似于python中的字典（键值对）</li>
+</ul>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruits = <span class="keyword">new</span> <span class="title class_">Map</span>([</span><br><span class="line">    [<span class="string">&quot;apples&quot;</span>, <span class="number">500</span>],</span><br><span class="line">    [<span class="string">&quot;bananas&quot;</span>, <span class="number">300</span>],</span><br><span class="line">    [<span class="string">&quot;oranges&quot;</span>, <span class="number">200</span>]</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问-2"><a href="#访问-2" class="headerlink" title="访问"></a>访问</h3><ul>
+<li><code>get()</code></li>
+<li><code>set()</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fruits.<span class="title function_">get</span>(<span class="string">&#x27;apples&#x27;</span>);</span><br><span class="line">&gt; <span class="number">500</span></span><br><span class="line">fruits.<span class="title function_">set</span>(<span class="string">&#x27;potato&#x27;</span>, <span class="number">700</span>);</span><br><span class="line"><span class="title class_">Map</span>(<span class="number">4</span>) &#123;<span class="string">&#x27;apples&#x27;</span> =&gt; <span class="number">500</span>, <span class="string">&#x27;bananas&#x27;</span> =&gt; <span class="number">300</span>, <span class="string">&#x27;oranges&#x27;</span> =&gt; <span class="number">200</span>, <span class="string">&#x27;potato&#x27;</span> =&gt; <span class="number">700</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><ul>
+<li>无序不重复的集合</li>
+</ul>
+<h3 id="创建-1"><a href="#创建-1" class="headerlink" title="创建"></a>创建</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> letters = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问-3"><a href="#访问-3" class="headerlink" title="访问"></a>访问</h3><ul>
+<li><code>add()</code></li>
+<li><code>delete()</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">letters.<span class="title function_">add</span>(<span class="string">&#x27;d&#x27;</span>);</span><br><span class="line">&gt; <span class="title class_">Set</span>(<span class="number">4</span>) &#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>&#125;</span><br><span class="line">letters.<span class="title function_">delete</span>(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">&gt; <span class="literal">true</span></span><br><span class="line">letters</span><br><span class="line">&gt; <span class="title class_">Set</span>(<span class="number">3</span>) &#123;<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>forEach()</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> letters = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]);</span><br><span class="line">letters.<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">&#125;)</span><br><span class="line">&gt; a</span><br><span class="line">&gt; b</span><br><span class="line">&gt; c</span><br></pre></td></tr></table></figure>
+
+<h2 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h2><h3 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h3><ul>
+<li>遍历数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">&#125;</span><br><span class="line">&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>遍历Map</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> m=<span class="keyword">new</span> <span class="title class_">Map</span>([[<span class="number">1</span>, <span class="string">&#x27;x&#x27;</span>], [<span class="number">2</span>, <span class="string">&#x27;y&#x27;</span>], [<span class="number">3</span>, <span class="string">&#x27;z&#x27;</span>]]);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> j <span class="keyword">of</span> m)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(j);</span><br><span class="line">&#125;</span><br><span class="line">&gt; [<span class="number">1</span>, <span class="string">&#x27;x&#x27;</span>], [<span class="number">2</span>, <span class="string">&#x27;y&#x27;</span>], [<span class="number">3</span>, <span class="string">&#x27;z&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>便利Set</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> set = <span class="keyword">new</span> <span class="title class_">Set</span>([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]]);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> set) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">&#125;</span><br><span class="line">&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://zerd1y.com">Jinghuai Xiao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://zerd1y.com/2025/03/03/2025-3-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88JavaScript%EF%BC%89/">https://zerd1y.com/2025/03/03/2025-3-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88JavaScript%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://zerd1y.com" target="_blank">zerd1y-Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a></div><div class="post-share"><div class="social-share" data-image="/../img/cover/cover47.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/03/04/2025-3-4-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%EF%BC%88JavaScript%EF%BC%89/" title="流程控制（JavaScript）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover49.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">流程控制（JavaScript）</div></div><div class="info-2"><div class="info-item-1">流程控制（JavaScript）if 语句12345678let score = 88;if (score &gt; 90) &#123;    alert(&quot;excellent&quot;);&#125; else if (score &gt; 80) &#123;    alert(&quot;good&quot;);&#125; else &#123;    alert(&quot;not good&quot;);&#125;  switch 语句123456789101112131415161718192021let date = 2;switch(score) &#123;    case 1:        alert(&quot;Monday&quot;);        break;    case 2:        alert(&quot;Tuesday&quot;);        break;    case 3:        alert(&quot;Wednesday&quot;);        break;    case 4:    ...</div></div></div></a><a class="pagination-related" href="/2025/03/03/2025-3-3-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="线性代数（深度学习）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover48.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">线性代数（深度学习）</div></div><div class="info-2"><div class="info-item-1">线性代数（深度学习）标量标量由只有一个元素的张量表示 12345678import torchx = torch.tensor(3.0)y = torch.tensor(2.0)x + y, x * y, x / y, x**y// (tensor(5.), tensor(6.), tensor(1.5000), tensor(9.))  向量向量可以被视为标量值组成的列表，这些标量值被称为向量的元素（element）或分量（component） 1234x = torch.arange(4)x// tensor([0, 1, 2, 3])  访问通过张量的索引来访问任一元素 12x[3]// tensot(3)  长度、维度和形状向量的长度通常称为向量的维度（dimension）  访问张量长度： 12len(x)// 4  **形状（shape）**是一个元素组，列出了张量沿每个轴的长度（维数） 用张量表示一个向量（只有一个轴）时，形状只有一个元素  访问： 12x.shape// torch.Size([4])  矩阵 创建矩阵 12345678A =...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/03/02/2025-3-2-%E5%88%9D%E8%AF%86JavaScript/" title="初识JavaScript"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover44.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-02</div><div class="info-item-2">初识JavaScript</div></div><div class="info-2"><div class="info-item-1">初识JavaScript一个合格的后端开发者，必须要精通JavaScript 概述 JavaScript 是互联网上最流行的脚本语言  JavaScript 是一种脚本编程语言，它可以在网页上实现复杂的功能，网页展现给你的不再是简单的静态信息，而是实时的内容更新——交互式的地图、2D&#x2F;3D 动画、滚动播放的视频等等   历史相关链接：[JavaScript历史]([JavaScript的诞生与进化 - 知乎](https://zhuanlan.zhihu.com/p/24352382390#:~:text=JavaScript，最初被称为 LiveScript，在 1995 年由 Brendan Eich （网景公司）开发并集成进 Netscape,JavaScript。 这个改名与当时 Java 编程语言的流行密切相关，借用了 Java 的影响力来推动 JavaScript 的普及。)) JavaScript，最初被称为 LiveScript，在 1995 年由 Brendan Eich（网景公司）开发并集成进 Netscape Navigator 2...</div></div></div></a><a class="pagination-related" href="/2025/03/04/2025-3-4-%E5%87%BD%E6%95%B0%EF%BC%88JavaScript%EF%BC%89/" title="函数（JavaScript）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover50.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-04</div><div class="info-item-2">函数（JavaScript）</div></div><div class="info-2"><div class="info-item-1">函数、变量（JavaScript）定义函数1234567function abs(num) &#123;    if (num &gt;= 0) &#123;        return num;    &#125;else &#123;        return -num;    &#125;&#125;   参数：按值传递，改变不反映到全局 对象、数组：改变对函数外部可见  匿名函数1234567var abs = function(x) &#123;    if (x &gt;= 0) &#123;        return x;    &#125;else &#123;        return -x;    &#125;&#125;   function(x) &#123;...&#125;是一个匿名函数，可以把结果赋值给abs，通过abs就可以调用函数 上下两个方式等价  调用函数参数问题：JavaScript可以传递任意一个参数，也可以不传递参数 12345678910var abs = function(x) &#123;    if (typeof x...</div></div></div></a><a class="pagination-related" href="/2025/03/04/2025-3-4-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%EF%BC%88JavaScript%EF%BC%89/" title="流程控制（JavaScript）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover49.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-04</div><div class="info-item-2">流程控制（JavaScript）</div></div><div class="info-2"><div class="info-item-1">流程控制（JavaScript）if 语句12345678let score = 88;if (score &gt; 90) &#123;    alert(&quot;excellent&quot;);&#125; else if (score &gt; 80) &#123;    alert(&quot;good&quot;);&#125; else &#123;    alert(&quot;not good&quot;);&#125;  switch 语句123456789101112131415161718192021let date = 2;switch(score) &#123;    case 1:        alert(&quot;Monday&quot;);        break;    case 2:        alert(&quot;Tuesday&quot;);        break;    case 3:        alert(&quot;Wednesday&quot;);        break;    case 4:    ...</div></div></div></a><a class="pagination-related" href="/2025/03/06/2025-3-6-%E5%86%85%E9%83%A8%E5%AF%B9%E8%B1%A1%EF%BC%88JavaScript%EF%BC%89/" title="内部对象（JavaScript）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover52.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-06</div><div class="info-item-2">内部对象（JavaScript）</div></div><div class="info-2"><div class="info-item-1">内部对象（JavaScript）Date创建创建 Date 对象： new Date() 1234567891011121314&quot;use strict&quot;;var now = new Date();now // Thu Mar 06 2025 19:19:50 GMT+0800 (中国标准时间)now.getFullYear() // 年now.getMonth() // 月 （从0开始计数）now,getDate() // 日now.getDay() // 星期几now.getHours() // 时now.getMinutes() // 分now.getSeconds() // 秒now.getTime() // 时间戳：1970 1.1 0:00:00 至今的毫秒数 // 1741259990855  转换12345678now = new Date(1741259990855); // 时间戳转换为时间// Thu Mar 06 2025 19:19:50 GMT+0800 (中国标准时间)now.toLocaleDateString()//...</div></div></div></a><a class="pagination-related" href="/2025/03/07/2025-3-7-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88JavaScript%EF%BC%89/" title="面向对象（JavaScript）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover55.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">面向对象（JavaScript）</div></div><div class="info-2"><div class="info-item-1">面向对象（JavaScript）JavaScript中一切引用类型都是对象，对象就是属性的集合。 Array、Function、Object、Date、RegExp等都是引用类型 也就是说 ，数组是对象、函数是对象、正则是对象、对象还是对象。 原型和原型链原型存在的意义就是组成原型链 原型链存在的意义就是继承 继承存在的意义就是属性共享 原型每一个对象从被创建开始就和另一个对象关联，从另一个对象上继承其属性，这个另一个对象就是 原型 当访问一个对象的属性时，先在对象的本身找，找不到就去对象的原型上找，如果还是找不到，就去对象的原型（原型也是对象，也有它自己的原型）的原型上找，如此继续，直到找到为止，或者查找到最顶层的原型对象中也没有找到，就结束查找，返回undefined 原型链这条由对象及其原型组成的链就叫做原型链。 proto 和 prototype_proto_每个 JavaScript 对象（除了 null）都自动拥有一个隐藏的属性 proto，它指向该对象的原型对象 prototype所有的 JavaScript 对象都会从一个...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jinghuai Xiao</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zerd1y"><i></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/zerd1y" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xiaojinghuai33@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88JavaScript%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">数据类型（JavaScript）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-number">1.1.2.</span> <span class="toc-text">转义字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E5%86%99"><span class="toc-number">1.1.3.</span> <span class="toc-text">多行字符串编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.4.</span> <span class="toc-text">模板字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.5.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.6.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.2.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text">创建对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.2.</span> <span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map"><span class="toc-number">1.4.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">1.4.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE-2"><span class="toc-number">1.4.2.</span> <span class="toc-text">访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set"><span class="toc-number">1.5.</span> <span class="toc-text">Set</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-1"><span class="toc-number">1.5.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE-3"><span class="toc-number">1.5.2.</span> <span class="toc-text">访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iterator"><span class="toc-number">1.6.</span> <span class="toc-text">iterator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for-of"><span class="toc-number">1.6.1.</span> <span class="toc-text">for of</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/09/2025-3-9-jQuery/" title="jQuery"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover57.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jQuery"/></a><div class="content"><a class="title" href="/2025/03/09/2025-3-9-jQuery/" title="jQuery">jQuery</a><time datetime="2025-03-08T16:00:00.000Z" title="发表于 2025-03-09 00:00:00">2025-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/08/2025-3-8-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="线性回归（深度学习）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover56.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性回归（深度学习）"/></a><div class="content"><a class="title" href="/2025/03/08/2025-3-8-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="线性回归（深度学习）">线性回归（深度学习）</a><time datetime="2025-03-07T16:00:00.000Z" title="发表于 2025-03-08 00:00:00">2025-03-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/07/2025-3-7-%E6%A6%82%E7%8E%87%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="概率（深度学习）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover53.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率（深度学习）"/></a><div class="content"><a class="title" href="/2025/03/07/2025-3-7-%E6%A6%82%E7%8E%87%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="概率（深度学习）">概率（深度学习）</a><time datetime="2025-03-06T16:00:00.000Z" title="发表于 2025-03-07 00:00:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/07/2025-3-7-%E6%9F%A5%E9%98%85%E6%96%87%E6%A1%A3%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="查阅文档（深度学习）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover54.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="查阅文档（深度学习）"/></a><div class="content"><a class="title" href="/2025/03/07/2025-3-7-%E6%9F%A5%E9%98%85%E6%96%87%E6%A1%A3%EF%BC%88%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%89/" title="查阅文档（深度学习）">查阅文档（深度学习）</a><time datetime="2025-03-06T16:00:00.000Z" title="发表于 2025-03-07 00:00:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/07/2025-3-7-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88JavaScript%EF%BC%89/" title="面向对象（JavaScript）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover55.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向对象（JavaScript）"/></a><div class="content"><a class="title" href="/2025/03/07/2025-3-7-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88JavaScript%EF%BC%89/" title="面向对象（JavaScript）">面向对象（JavaScript）</a><time datetime="2025-03-06T16:00:00.000Z" title="发表于 2025-03-07 00:00:00">2025-03-07</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By Jinghuai Xiao</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
