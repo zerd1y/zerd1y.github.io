@@ -1,0 +1,486 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>命令行 | zerd1y-Blog</title><meta name="author" content="Jinghuai Xiao"><meta name="copyright" content="Jinghuai Xiao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="命令行GUI、CLICSGO就不是命令行软件  GUI： *Command-Line Interface，命令行界面，*命令行界面用鼠标双击会跳窗口的软件 CLI： Graphical User Interface，图形用户界面在终端里敲键盘才能用的软件     Type GUI CLI    浏览器 Chrome&#x2F;Firefox w3m&#x2F;lynx   图像处理 PhotoSh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命令行">
+<meta property="og:url" content="https://zerd1y.com/2025/03/12/2025-3-12-%E5%91%BD%E4%BB%A4%E8%A1%8C/index.html">
+<meta property="og:site_name" content="zerd1y-Blog">
+<meta property="og:description" content="命令行GUI、CLICSGO就不是命令行软件  GUI： *Command-Line Interface，命令行界面，*命令行界面用鼠标双击会跳窗口的软件 CLI： Graphical User Interface，图形用户界面在终端里敲键盘才能用的软件     Type GUI CLI    浏览器 Chrome&#x2F;Firefox w3m&#x2F;lynx   图像处理 PhotoSh">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zerd1y.com/img/cover/cover26.jpg">
+<meta property="article:published_time" content="2025-03-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-11T16:00:00.000Z">
+<meta property="article:author" content="Jinghuai Xiao">
+<meta property="article:tag" content="命令行">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zerd1y.com/img/cover/cover26.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zerd1y.com/2025/03/12/2025-3-12-%E5%91%BD%E4%BB%A4%E8%A1%8C/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '命令行',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/modify.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://source.fomal.cc/img/default_cover_4.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 基础知识</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/basics/algorithm/"><i class="fa-fw fas fa-code"></i><span> 算法与数据结构</span></a></li><li><a class="site-page child" href="/basics/os/"><i class="fa-fw fas fa-desktop"></i><span> 操作系统</span></a></li><li><a class="site-page child" href="/basics/database/"><i class="fa-fw fas fa-database"></i><span> 数据库</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code-branch"></i><span> 开发</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/development/frontend/"><i class="fa-fw fab fa-react"></i><span> 前端</span></a></li><li><a class="site-page child" href="/development/backend/"><i class="fa-fw fas fa-server"></i><span> 后端</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-robot"></i><span> AI</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/ai/machine-learning/"><i class="fa-fw fas fa-brain"></i><span> 机器学习</span></a></li><li><a class="site-page child" href="/ai/computer-vision/"><i class="fa-fw fas fa-eye"></i><span> 计算机视觉</span></a></li><li><a class="site-page child" href="/ai/naturalS-language-processing/"><i class="fa-fw fas fa-comment-alt"></i><span> 自然语言处理</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chitchat/"><i class="fa-fw fas fa-bullhorn"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(../img/cover/cover26.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zerd1y-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">命令行</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 基础知识</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/basics/algorithm/"><i class="fa-fw fas fa-code"></i><span> 算法与数据结构</span></a></li><li><a class="site-page child" href="/basics/os/"><i class="fa-fw fas fa-desktop"></i><span> 操作系统</span></a></li><li><a class="site-page child" href="/basics/database/"><i class="fa-fw fas fa-database"></i><span> 数据库</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-code-branch"></i><span> 开发</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/development/frontend/"><i class="fa-fw fab fa-react"></i><span> 前端</span></a></li><li><a class="site-page child" href="/development/backend/"><i class="fa-fw fas fa-server"></i><span> 后端</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-robot"></i><span> AI</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/ai/machine-learning/"><i class="fa-fw fas fa-brain"></i><span> 机器学习</span></a></li><li><a class="site-page child" href="/ai/computer-vision/"><i class="fa-fw fas fa-eye"></i><span> 计算机视觉</span></a></li><li><a class="site-page child" href="/ai/naturalS-language-processing/"><i class="fa-fw fas fa-comment-alt"></i><span> 自然语言处理</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chitchat/"><i class="fa-fw fas fa-bullhorn"></i><span> 碎碎念</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">命令行</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-11T16:00:00.000Z" title="发表于 2025-03-12 00:00:00">2025-03-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-11T16:00:00.000Z" title="更新于 2025-03-12 00:00:00">2025-03-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h1><h2 id="GUI、CLI"><a href="#GUI、CLI" class="headerlink" title="GUI、CLI"></a>GUI、CLI</h2><p><em>CSGO就不是命令行软件</em></p>
+<ul>
+<li><strong>GUI：</strong> *Command-Line Interface，命令行界面，*命令行界面用鼠标双击会跳窗口的软件</li>
+<li><strong>CLI：</strong> <em>Graphical User Interface，图形用户界面</em>在终端里敲键盘才能用的软件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>GUI</th>
+<th>CLI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>浏览器</td>
+<td>Chrome&#x2F;Firefox</td>
+<td>w3m&#x2F;lynx</td>
+</tr>
+<tr>
+<td>图像处理</td>
+<td>PhotoShop</td>
+<td>ImageMagick</td>
+</tr>
+<tr>
+<td>视频编辑</td>
+<td>Pr&#x2F;Davinci resolve</td>
+<td>FFmpeg</td>
+</tr>
+<tr>
+<td>文本编辑</td>
+<td>VSCode&#x2F;Sublime</td>
+<td>Vim&#x2F;TECO</td>
+</tr>
+</tbody></table>
+<h2 id="为什么要使用命令行"><a href="#为什么要使用命令行" class="headerlink" title="为什么要使用命令行"></a>为什么要使用命令行</h2><p>因为我们用计算机的目的不同：程序员要写程序</p>
+<ul>
+<li><strong>而命令行比GUI更高效</strong></li>
+</ul>
+<p>比如<code>apt install gcc</code>一行就能安装完整的C语言编译工具</p>
+<h3 id="example：-比较两个文件是否相同"><a href="#example：-比较两个文件是否相同" class="headerlink" title="*example：*比较两个文件是否相同"></a>*example：*比较两个文件是否相同</h3><ul>
+<li><p>命令行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文本文件的比较：vimdiff file1 file2</span><br><span class="line">非文本文件的比较：diff file1 file2</span><br><span class="line">很大的文件：<span class="built_in">md5sum</span> file1 file2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>GUI：</p>
+<p>先找一个有这个功能的软件，然后下载，然后安装，然后看看怎么用，然后比较</p>
+</li>
+</ul>
+<p><strong>更重要的是，有些复杂的事情GUI几乎做不了</strong></p>
+<h3 id="example：-列出一个C语言项目中所有被包含过的头文件"><a href="#example：-列出一个C语言项目中所有被包含过的头文件" class="headerlink" title="*example：*列出一个C语言项目中所有被包含过的头文件"></a>*example：*列出一个C语言项目中所有被包含过的头文件</h3><ul>
+<li><p>GUI：</p>
+<p><strong>好像没法做</strong></p>
+</li>
+<li><p>命令行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">&quot;*.[ch]&quot;</span> | xargs <span class="built_in">cat</span> | grep <span class="string">&quot;^#include&quot;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> </span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>命令行的优点：</strong></p>
+<ol>
+<li>每个小工具只做一件事</li>
+<li>小工具采用文本进行输入输出，从而易于使用</li>
+<li>通过小工具之间的组合来解决复杂问题</li>
+</ol>
+<h2 id="文本编辑"><a href="#文本编辑" class="headerlink" title="文本编辑"></a>文本编辑</h2><ul>
+<li>Vim &#x2F; Emacs</li>
+</ul>
+<h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h3><p>[菜鸟教程](<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-vim.html">Linux vi&#x2F;vim | 菜鸟教程</a>)</p>
+<p>特点：命令式编程。Vim 共分为三种模式，<strong>命令模式（Command Mode）、输入模式（Insert Mode）和命令行模式（Command-Line Mode）</strong></p>
+<h4 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h4><ul>
+<li><code>h,j,k,l</code>：左，下，上，右</li>
+<li><code>i</code>：切换到输入模式，在光标当前位置开始输入文本</li>
+<li><code>x</code>：删除当前光标所在处的字符。</li>
+<li><code>:</code>：切换到底线命令模式，以在最底一行输入命令。</li>
+<li><code>a</code>：进入插入模式，在光标下一个位置开始输入文本。</li>
+<li><code>o</code>：在当前行的下方插入一个新行，并进入插入模式。</li>
+<li><code>O</code>：在当前行的上方插入一个新行，并进入插入模式。</li>
+<li><code>dd</code>：剪切当前行。</li>
+<li><code>yy</code>：复制当前行。</li>
+<li><code>p</code>：（小写）粘贴剪贴板内容到光标下方。</li>
+<li><code>P</code>：（大写）粘贴剪贴板内容到光标上方。</li>
+<li><code>u</code>：撤销上一次操作。</li>
+<li><code>Ctrl + r</code>：重做上一次撤销的操作。</li>
+<li><code>:w</code>：保存文件。</li>
+<li><code>:q</code>：退出 Vim 编辑器。</li>
+<li><code>:q!</code>：强制退出Vim 编辑器，不保存修改。</li>
+</ul>
+<h3 id="Emacs"><a href="#Emacs" class="headerlink" title="Emacs"></a>Emacs</h3><p>[Emacs教程——知乎](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/385214753">专业 Emacs 入门（一） - 知乎</a>)</p>
+<p>**为什么有必要了解一些Emacs键位：**因为一些发行版自带的终端不支持Vim键位而支持Emacs快捷键</p>
+<ul>
+<li><code>Ctrl+a</code>：跳转句首</li>
+<li><code>Ctrl+e</code>：跳转句末</li>
+<li><code>Alt+f</code>、<code>Alt+b</code>：在单词间跳转</li>
+<li><code>Alt+c</code>：跳转到下一个单词，并将前一个单词的首字母大写</li>
+</ul>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wzk4869/article/details/132855372?fromshare=blogdetail&sharetype=blogdetail&sharerId=132855372&sharerefer=PC&sharesource=zerd1y&sharefrom=from_link">Linux常用命令</a></p>
+<ul>
+<li><p><code>ls</code>：列出当前目录中的文件和子目录</p>
+</li>
+<li><p><code>touch &lt;filename&gt;</code> ：创建新文件</p>
+</li>
+<li><p><code>echo &lt;string&gt;</code>：输出字符串</p>
+</li>
+<li><p><code>rm</code>：删除文件或目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> file_name</span><br><span class="line"><span class="built_in">rm</span> -r directory_name  <span class="comment"># 递归删除目录及其内容</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>mkdir</code>：创建新目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> directory_name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>mv</code>：移动或重命名文件或目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> old_name new_name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>pwd</code>：显示当前工作目录的路径</p>
+</li>
+<li><p><code>cat</code>：连接和显示文件内容</p>
+</li>
+</ul>
+<h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2><ul>
+<li><p><code>Ctrl+z</code>：将一个正在前台执行的命令挂起</p>
+</li>
+<li><p><code>bg</code>：将一个在后台暂停的命令，变成继续执行</p>
+</li>
+<li><p><code>jobs</code>：查看当前有多少在后台运行的命令</p>
+</li>
+<li><p><code>fg</code>：将后台中的命令调至前台继续运行</p>
+</li>
+<li><p><code>kill -9 &lt;PID&gt;</code>：强制结束进程</p>
+</li>
+<li><p><code>ps aux</code>：显示所有进程</p>
+</li>
+<li><p><code>top</code>：实时监视系统资源（<code>Ctrl+c</code>退出）</p>
+</li>
+<li><p><code>htop</code>：更友好的进程监视器（<code>Ctrl+c</code>退出）</p>
+</li>
+</ul>
+<h2 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">重定向</span><br><span class="line">管道</span><br><span class="line">xargs</span><br></pre></td></tr></table></figure>
+
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p><em>改变目的地</em></p>
+<p>改变命令的标准输入、标准输出和标准错误的默认目的地</p>
+<p>输入重定向：</p>
+<ul>
+<li><code>&lt;</code>：将文件的内容作为命令的输入</li>
+</ul>
+<p>输出重定向：</p>
+<ul>
+<li><code>&gt;</code>：将命令的输出重定向到文件中（覆盖原有内容</li>
+<li><code>&gt;&gt;</code>：将命令的输出追加到文件末尾</li>
+</ul>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p><em>连接输入输出</em></p>
+<p><code>|</code>：用于连接程序间输入输出的缓冲区，将一个命令的标准输出（stdout）直接连接到另一个命令的标准输入</p>
+<ul>
+<li><p><code>|</code>左边命令的输出就会作为<code>|</code>右边命令的输入</p>
+</li>
+<li><p>可连续使用</p>
+<p><em>example：</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算 /bin 目录下的文件数量</span></span><br><span class="line"><span class="built_in">ls</span> /bin | <span class="built_in">wc</span> -l</span><br><span class="line">&gt; 907</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h3><p><code>xargs</code>：将标准输入转变为命令的参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;a.c b.c c.c&quot;</span> | xargs  <span class="built_in">rm</span></span><br><span class="line"><span class="built_in">rm</span> <span class="string">&quot;a.c b.c c.c&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="通配符、正则表达式"><a href="#通配符、正则表达式" class="headerlink" title="通配符、正则表达式"></a>通配符、正则表达式</h2><h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>功能</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*</code></td>
+<td>匹配多个字符</td>
+<td><code>*.txt</code>匹配所有以<code>.txt</code>结尾的文件</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配任意单个字符</td>
+<td><code>file?.txt</code>匹配<code>file1.txt</code>，<code>filea.txt</code></td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td>匹配括号中的任意字符</td>
+<td><code>file[1-2].txt</code>匹配<code>file1.txt</code>，<code>file2.txt</code>，<code>file3.txt</code></td>
+</tr>
+<tr>
+<td><code>[!]</code></td>
+<td>匹配不在括号中的任意字符</td>
+<td><code>file[!1-3].txt</code>匹配除<code>file1.txt</code>，<code>file2.txt</code>，<code>file3.txt</code>的文件</td>
+</tr>
+<tr>
+<td><code>&#123;&#125;</code></td>
+<td>匹配指定的字符串</td>
+<td><code>file&#123;1,2&#125;.txt</code>匹配<code>file1.txt</code>，<code>file2.txt</code></td>
+</tr>
+</tbody></table>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p><code>POSIX</code> &#x2F; <code>Python</code> &amp; <code>Perl</code> &#x2F; <code>grep</code> &amp; <code>egrep</code>使用规范不一样，这里先略过</p>
+<h2 id="阅读文档"><a href="#阅读文档" class="headerlink" title="阅读文档"></a>阅读文档</h2><blockquote>
+<p>东西好多，我记不住&#x2F;学不会怎么办？</p>
+</blockquote>
+<p>最重要的Linux命令：<code>man</code></p>
+<ul>
+<li>查阅命令&#x2F;库函数&#x2F;系统文件等内容的手册</li>
+<li><code>man man</code>：学习如何RTFM（Read The Friendly Manual）</li>
+<li><code>man ls</code>：查看如何使用<code>ls</code>命令</li>
+</ul>
+<p>如何学习正则表达式？：<code>man 7 regex</code></p>
+<blockquote>
+<p>手册上没有怎么办？</p>
+</blockquote>
+<p>基本上不太可能，如果真的没有：</p>
+<ul>
+<li>Search The Friendly Web（Google、StackOverflow）</li>
+<li>Ask The Friendly LLM（ChatGPT）</li>
+<li>Read The Source Code</li>
+</ul>
+<h2 id="自动化、脚本"><a href="#自动化、脚本" class="headerlink" title="自动化、脚本"></a>自动化、脚本</h2><h3 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h3><p>我们通过小工具的组合来解决复杂问题</p>
+<p><em>example：</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">&quot;*.[ch]&quot;</span> | xargs <span class="built_in">cat</span> | grep <span class="string">&quot;^#include&quot;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>find . -name &quot;\*.[ch]&quot;</code>：在当前目录查找所有以<code>.c</code>、<code>.h</code>结尾的文件，并将结果通过管道传给下一条命令</li>
+<li><code>xargs cat</code>：运用<code>xargs</code>打印这些内容，并将结果通过管道传给下一条命令</li>
+<li><code>grep &quot;^#include&quot;</code>：用<code>grep</code>查找所有以<code>#include</code>开头的内容，并将结果通过管道传给下一条命令</li>
+<li><code>sort</code>：对上面的结果进行排序，并将结果通过管道传给下一条命令</li>
+<li><code>uniq</code>：对上面的结果进行去重</li>
+</ul>
+<h3 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h3><p>把命令写到一个文件里面</p>
+<ul>
+<li>可以重复执行，不用每次都手动输入了</li>
+<li>可以被其他脚本调用，自动化工作</li>
+<li>效率提升</li>
+</ul>
+<p><strong>Windows 批处理文件 &#x2F; Powershell：</strong></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/training/modules/introduction-to-powershell/">Introduction to PowerShell - Training | Microsoft Learn</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/powershell/">PowerShell Documentation - PowerShell | Microsoft Learn</a></p>
+</li>
+</ul>
+<h2 id="Unix-Bash-Zsh-Fish"><a href="#Unix-Bash-Zsh-Fish" class="headerlink" title="Unix Bash&#x2F;Zsh&#x2F;Fish"></a>Unix Bash&#x2F;Zsh&#x2F;Fish</h2><p><em>Unix 是一种操作系统的设计理念和技术规范，Bash、Zsh 和 Fish 都是 Unix 系统（包括 Linux 和 macOS）中使用的命令行解释器（shell）</em></p>
+<ul>
+<li><strong>Bash：</strong> Linux 系统中默认的 Shell，bash 的特点是简单而实用</li>
+<li>**Zsh：**zsh 是一个功能更为强大的 Shell，提供命令补全、自动纠错、语法高亮等丰富的特性，可定制性也更好</li>
+<li><strong>Fish：</strong>（Friendly Interactive Shell）相对于 bash 和 zsh 来说比较新的 Shell。主要特点是易于使用、友好、可定制性好等。它提供了很好的操作体验，包括语法高亮、命令补全等功能。</li>
+</ul>
+<h2 id="命令行的本质"><a href="#命令行的本质" class="headerlink" title="命令行的本质"></a>命令行的本质</h2><p>工具类型的分布：</p>
+<p>大部分是可执行文件（ELF），小部分是脚本</p>
+<h1 id="Linux-实践"><a href="#Linux-实践" class="headerlink" title="Linux 实践"></a>Linux 实践</h1><h2 id="在-Windows-上运行-Linux"><a href="#在-Windows-上运行-Linux" class="headerlink" title="在 Windows 上运行 Linux"></a>在 Windows 上运行 Linux</h2><h3 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h3><p><em>Windows Subsystem for Linux</em></p>
+<ul>
+<li><strong>性能</strong>：由于WSL直接在Windows内核之上运行Linux二进制文件，它提供了接近原生的性能，特别是在I&#x2F;O操作方面有了显著改进（尤其是在WSL 2中）。</li>
+<li><strong>易用性</strong>：非常易于安装和使用，只需通过Microsoft Store下载所需的Linux发行版并按照提示进行设置即可。</li>
+<li><strong>资源使用</strong>：因为不需要虚拟化整个操作系统，所以资源消耗相对较低。</li>
+<li><strong>适用场景</strong>：适合需要在Windows环境中运行Linux命令行工具的开发者，特别是对于那些想要快速启动Linux环境而无需管理完整虚拟机的人。</li>
+</ul>
+<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p><em>如 VMware, VirtualBox</em></p>
+<ul>
+<li><strong>性能</strong>：虽然现代虚拟化技术已经相当高效，但与WSL相比，虚拟机仍然会带来一定的性能开销，尤其是在图形处理和I&#x2F;O密集型任务中。</li>
+<li><strong>易用性</strong>：安装过程较为复杂，需要配置虚拟硬盘、内存分配等参数，不过一旦设置完成，用户体验与实际物理机相似。</li>
+<li><strong>资源使用</strong>：需要更多的系统资源，包括CPU、内存和磁盘空间，因为它实际上是在模拟一个完整的操作系统环境。</li>
+<li><strong>适用场景</strong>：适用于需要在一个完全隔离的环境中测试软件或运行Linux桌面应用的情况。</li>
+</ul>
+<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><ul>
+<li><strong>性能</strong>：Docker容器共享主机系统的内核，因此其性能损失极小，非常适合部署应用程序和服务。</li>
+<li><strong>易用性</strong>：对于熟悉容器概念的用户来说，Docker易于使用且功能强大，但它可能对初学者不太友好。</li>
+<li><strong>资源使用</strong>：比虚拟机更轻量，因为它不虚拟化整个操作系统层。</li>
+<li><strong>适用场景</strong>：主要用于开发和部署应用程序，尤其是微服务架构的应用程序。</li>
+</ul>
+<h3 id="双系统"><a href="#双系统" class="headerlink" title="双系统"></a>双系统</h3><p><em>Dual Boot：双系统启动</em></p>
+<ul>
+<li><strong>性能</strong>：提供完全的原生Linux体验，没有性能损失。</li>
+<li><strong>易用性</strong>：安装过程复杂，涉及硬盘分区和引导加载程序配置，而且每次只能运行一个操作系统。</li>
+<li><strong>资源使用</strong>：取决于你如何分配硬盘空间给两个系统，通常需要为每个系统预留足够的存储空间。</li>
+<li><strong>适用场景</strong>：适合那些需要全面访问Linux功能，包括硬件支持、图形界面等，并愿意接受切换操作系统的不便之处的用户。</li>
+</ul>
+<h2 id="安装WSL"><a href="#安装WSL" class="headerlink" title="安装WSL"></a>安装WSL</h2><h3 id="开启CPU虚拟化"><a href="#开启CPU虚拟化" class="headerlink" title="开启CPU虚拟化"></a>开启CPU虚拟化</h3><p>Windows搜索栏 -＞ 任务管理器 -＞ 性能 -＞ CPU</p>
+<h3 id="开启Windows功能"><a href="#开启Windows功能" class="headerlink" title="开启Windows功能"></a>开启Windows功能</h3><p>Windows搜索栏 -＞ 控制面板 -＞ 程序 -＞ 程序和功能 -＞启用或关闭Windows功能 </p>
+<p>打开：</p>
+<ol>
+<li>适用于Linux的Windows子系统</li>
+<li>虚拟机平台（Virtual Machine Platform）</li>
+</ol>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Windows搜索栏 -＞ 命令提示符 -＞右键“以管理员身份运行”：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wsl --install --web-download </span><br><span class="line"><span class="comment"># 默认下载Ubuntu</span></span><br></pre></td></tr></table></figure>
+
+<p>下载其他Linux版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wsl --list --online</span><br><span class="line">wsl --install &lt;版本名称&gt; --web-download</span><br></pre></td></tr></table></figure>
+
+<p>后按提示启动Ubuntu，设置用户名、密码</p>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --unregister &lt;版本名称&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Linux配置-VSCode-C-C-开发环境"><a href="#Linux配置-VSCode-C-C-开发环境" class="headerlink" title="Linux配置 VSCode C&#x2F;C++开发环境"></a>Linux配置 VSCode C&#x2F;C++开发环境</h2><p>[Linux&#x2F;Ubuntu中VSCode配置C++&#x2F;C环境](Linux&#x2F;Ubuntu中Vs Code配置C++&#x2F;C环境)</p>
+<ol>
+<li>安装扩展WSL</li>
+</ol>
+<ul>
+<li><code>sudo apt update</code>：更新软件包列表及其版本</li>
+<li><code>sudo apt install build-essential gdb</code>：包括但不限于 GCC (GNU Compiler Collection)、G++ (GCC 的 C++ 编译器)、make 等</li>
+</ul>
+<ol>
+<li><p>远程资源管理器 -＞ WSL目标 -＞连接Ubuntu</p>
+</li>
+<li><p>安装插件：（运行）</p>
+<ul>
+<li>C&#x2F;C++ （C&#x2F;C++ Extension Pack）</li>
+<li>Code Runner</li>
+</ul>
+<p>先写一段代码运行，并选择编译器，自动生成.vscode文件</p>
+</li>
+<li><p>配置调试文件</p>
+<p>（现在除非是自定义调试，其实可以不需要了，直接右上角调试即可）</p>
+<p>在.vscode下配置文件<code>launch.json</code>，<code>tasks.json</code>（没有就新建）</p>
+<p>launch.json：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C/C++&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;fileDirname&#125;/$&#123;fileBasenameNoExtension&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;MIMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;compile&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;setupCommands&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Enable pretty-printing for gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-enable-pretty-printing&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>task.json：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;compile&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;g++&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;-g&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;$&#123;file&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-o&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;$&#123;fileDirname&#125;/$&#123;fileBasenameNoExtension&#125;&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;owner&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cpp&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;fileLocation&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="string">&quot;relative&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span></span><br><span class="line">                <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;pattern&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;regexp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;file&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;line&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;column&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;severity&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样你就可以用左边的运行和调试了</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://zerd1y.com">Jinghuai Xiao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://zerd1y.com/2025/03/12/2025-3-12-%E5%91%BD%E4%BB%A4%E8%A1%8C/">https://zerd1y.com/2025/03/12/2025-3-12-%E5%91%BD%E4%BB%A4%E8%A1%8C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://zerd1y.com" target="_blank">zerd1y-Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a></div><div class="post-share"><div class="social-share" data-image="/../img/cover/cover26.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/03/13/2025-3-13-Git/" title="Git"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover27.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Git</div></div><div class="info-2"><div class="info-item-1">Git[推荐教程](简介 - Git教程 - 廖雪峰的官方网站) 简介目前世界上最先进的分布式版本控制系统（没有之一） 场景你要用Microsoft Word写过长篇大论：  想删除一个段落，又怕将来想恢复找不回来怎么办？-＞手动保存一大堆版本 过了一周，你想找回被删除的文字，但是已经记不清删除前保存在哪个文件里了，只好一个一个文件去找 看着一堆乱七八糟的文件，想保留最新的一个，然后把其他的删掉，又怕哪天会用上，还不敢删 有些部分需要你的财务同事帮助填写，于是你把文件Copy到U盘里给她，一天后，同事再把Word文件传给你，此时，你必须想想，发给她之后到你收到她的文件期间，你作了哪些改动，得把你的改动和她的部分合并，真困难  于是你想，如果有一个软件，不但能自动帮我记录每次文件的改动，还可以让同事协作编辑，这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。如果想查看某次改动，只需要在软件里瞄一眼就可以，岂不是很方便？ 由此诞生了Git，结束了手动管理多个“版本”的史前时代，进入到版本控制的20世纪 集中式 vs...</div></div></div></a><a class="pagination-related" href="/2025/03/11/2025-3-11-%E8%B5%9B%E5%8D%9A%E6%89%AB%E7%9B%B2/" title="赛博扫盲"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover25.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">赛博扫盲</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jinghuai Xiao</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zerd1y"><i></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/zerd1y" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xiaojinghuai33@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">1.</span> <span class="toc-text">命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GUI%E3%80%81CLI"><span class="toc-number">1.1.</span> <span class="toc-text">GUI、CLI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">1.2.</span> <span class="toc-text">为什么要使用命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example%EF%BC%9A-%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E7%9B%B8%E5%90%8C"><span class="toc-number">1.2.1.</span> <span class="toc-text">*example：*比较两个文件是否相同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example%EF%BC%9A-%E5%88%97%E5%87%BA%E4%B8%80%E4%B8%AAC%E8%AF%AD%E8%A8%80%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%89%80%E6%9C%89%E8%A2%AB%E5%8C%85%E5%90%AB%E8%BF%87%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">*example：*列出一个C语言项目中所有被包含过的头文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91"><span class="toc-number">1.3.</span> <span class="toc-text">文本编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim"><span class="toc-number">1.3.1.</span> <span class="toc-text">Vim</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">命令模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Emacs"><span class="toc-number">1.3.2.</span> <span class="toc-text">Emacs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">文件管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">进程管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">1.6.</span> <span class="toc-text">输入输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">1.6.1.</span> <span class="toc-text">重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93"><span class="toc-number">1.6.2.</span> <span class="toc-text">管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xargs"><span class="toc-number">1.6.3.</span> <span class="toc-text">xargs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.7.</span> <span class="toc-text">通配符、正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-number">1.7.1.</span> <span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.7.2.</span> <span class="toc-text">正则表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%85%E8%AF%BB%E6%96%87%E6%A1%A3"><span class="toc-number">1.8.</span> <span class="toc-text">阅读文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E3%80%81%E8%84%9A%E6%9C%AC"><span class="toc-number">1.9.</span> <span class="toc-text">自动化、脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-number">1.9.1.</span> <span class="toc-text">自动化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">1.9.2.</span> <span class="toc-text">脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unix-Bash-Zsh-Fish"><span class="toc-number">1.10.</span> <span class="toc-text">Unix Bash&#x2F;Zsh&#x2F;Fish</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">1.11.</span> <span class="toc-text">命令行的本质</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E5%AE%9E%E8%B7%B5"><span class="toc-number">2.</span> <span class="toc-text">Linux 实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8-Windows-%E4%B8%8A%E8%BF%90%E8%A1%8C-Linux"><span class="toc-number">2.1.</span> <span class="toc-text">在 Windows 上运行 Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WSL"><span class="toc-number">2.1.1.</span> <span class="toc-text">WSL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">2.1.2.</span> <span class="toc-text">虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker"><span class="toc-number">2.1.3.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.4.</span> <span class="toc-text">双系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85WSL"><span class="toc-number">2.2.</span> <span class="toc-text">安装WSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AFCPU%E8%99%9A%E6%8B%9F%E5%8C%96"><span class="toc-number">2.2.1.</span> <span class="toc-text">开启CPU虚拟化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AFWindows%E5%8A%9F%E8%83%BD"><span class="toc-number">2.2.2.</span> <span class="toc-text">开启Windows功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.3.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD"><span class="toc-number">2.2.4.</span> <span class="toc-text">卸载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E9%85%8D%E7%BD%AE-VSCode-C-C-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">2.3.</span> <span class="toc-text">Linux配置 VSCode C&#x2F;C++开发环境</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/2025-3-23-%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E5%9D%80/" title="可能有用的网址"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover33.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="可能有用的网址"/></a><div class="content"><a class="title" href="/2025/03/23/2025-3-23-%E5%8F%AF%E8%83%BD%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E5%9D%80/" title="可能有用的网址">可能有用的网址</a><time datetime="2025-03-22T16:00:00.000Z" title="发表于 2025-03-23 00:00:00">2025-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/2025-3-23-%E5%90%8E%E7%AB%AF%E5%AE%9E%E4%B9%A0-Tips/" title="后端实习-Tips"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover32.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="后端实习-Tips"/></a><div class="content"><a class="title" href="/2025/03/23/2025-3-23-%E5%90%8E%E7%AB%AF%E5%AE%9E%E4%B9%A0-Tips/" title="后端实习-Tips">后端实习-Tips</a><time datetime="2025-03-22T16:00:00.000Z" title="发表于 2025-03-23 00:00:00">2025-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/22/2025-3-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88C-%EF%BC%89/" title="数据结构（C++）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover31.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构（C++）"/></a><div class="content"><a class="title" href="/2025/03/22/2025-3-22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88C-%EF%BC%89/" title="数据结构（C++）">数据结构（C++）</a><time datetime="2025-03-21T16:00:00.000Z" title="发表于 2025-03-22 00:00:00">2025-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/21/2025-3-21-C-%E9%80%9F%E9%80%9A/" title="C++ 速通"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover30.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ 速通"/></a><div class="content"><a class="title" href="/2025/03/21/2025-3-21-C-%E9%80%9F%E9%80%9A/" title="C++ 速通">C++ 速通</a><time datetime="2025-03-20T16:00:00.000Z" title="发表于 2025-03-21 00:00:00">2025-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/19/2025-3-19-task-tracker-cli/" title="task_tracker_cli"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/cover/cover29.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="task_tracker_cli"/></a><div class="content"><a class="title" href="/2025/03/19/2025-3-19-task-tracker-cli/" title="task_tracker_cli">task_tracker_cli</a><time datetime="2025-03-18T16:00:00.000Z" title="发表于 2025-03-19 00:00:00">2025-03-19</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By Jinghuai Xiao</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
