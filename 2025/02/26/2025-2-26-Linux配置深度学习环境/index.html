@@ -209,13 +209,13 @@
 <li><p>到官网找对应版本下载即可：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">nvidia_cuda官网下载</a></p>
 </li>
 <li><p>按你的计算机版本走：</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/screenshot/cuda_12.6.png" alt="cuda下载"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/02/26/2025-2-26-Linux%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/img/screenshot/cuda_12.6.png" alt="cuda下载"></p>
 </li>
 <li><p>把下面两行代码依次复制到终端运行，开始安装</p>
 </li>
 </ul>
 <h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><p>**安装过程中注意取消勾选Driver选项，以避免重复安装显卡驱动导致安装失败，**取消勾选后的界面如下图所示：</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/screenshot/cuda_download.png" alt="取消勾选Driver项"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/02/26/2025-2-26-Linux%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/img/screenshot/cuda_download.png" alt="取消勾选Driver项"></p>
 <h2 id="cuda配置"><a href="#cuda配置" class="headerlink" title="cuda配置"></a>cuda配置</h2><p>打开环境变量配置文件：<code>gedit ~/.bashrc</code></p>
 <p>添加以下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/usr/local/cuda-12.6/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:<span class="variable">$LD_LIBRARY_PATH</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -223,14 +223,14 @@
 <p>激活环境变量<code>source ~/.bashrc</code></p>
 <h2 id="检查cuda是否安装正确"><a href="#检查cuda是否安装正确" class="headerlink" title="检查cuda是否安装正确"></a>检查cuda是否安装正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
 
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/screenshot/cuda_terminal.png" alt="检查cuda安装成功"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/02/26/2025-2-26-Linux%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/img/screenshot/cuda_terminal.png" alt="检查cuda安装成功"></p>
 <p>出现以上结果即为安装成功</p>
 <h1 id="安装cudnn"><a href="#安装cudnn" class="headerlink" title="安装cudnn"></a>安装cudnn</h1><h2 id="找到和你的cuda匹配的cudnn版本"><a href="#找到和你的cuda匹配的cudnn版本" class="headerlink" title="找到和你的cuda匹配的cudnn版本"></a>找到和你的cuda匹配的cudnn版本</h2><ul>
 <li>是的，cudnn也要和cuda版本对应</li>
 <li>官网可查找：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive">官网</a></li>
 </ul>
 <h2 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h2><p>官网找到就可以直接点击进去安装了</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/screenshot/cudnn_download.png" alt="cudn_download"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/02/26/2025-2-26-Linux%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/img/screenshot/cudnn_download.png" alt="cudn_download"></p>
 <h2 id="提取"><a href="#提取" class="headerlink" title="提取"></a>提取</h2><p>下载完成后，进入下载目录，进行以下操作：</p>
 <ol>
 <li><p>提取cuDNN文件：<code>tar -xf xxx.tar.xz</code></p>
@@ -249,7 +249,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /usr/local/cuda-12.6/include/cudnn_version.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
 
 <p><strong>（注意改版本号）</strong></p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/../img/screenshot/cudnn_terminal.png" alt="验证cudnn安装"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2025/02/26/2025-2-26-Linux%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/img/screenshot/cudnn_terminal.png" alt="验证cudnn安装"></p>
 <p>出现以上结果即为安装成功</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>到这里安装就大功告成啦，感觉比较累，但很有成就感</p>
 <p>如果你想再验证一下是否安装成功的话：</p>
